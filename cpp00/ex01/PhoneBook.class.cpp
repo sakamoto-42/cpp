@@ -6,13 +6,16 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:08:22 by julien            #+#    #+#             */
-/*   Updated: 2025/05/27 12:57:59 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/28 10:23:23 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include <string>
+#include <cstdlib>
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
+#include "utils.hpp"
 
 PhoneBook::PhoneBook(void) : _contact_count(0), _next_contact_index(0)
 {
@@ -48,7 +51,65 @@ PhoneBook	&PhoneBook::operator=(PhoneBook const &rhs)
 	return (*this);
 }
 
-void		PhoneBook::_ft_print_add_contact_warning(void)
+void	PhoneBook::ft_add_contact(void)
+{
+	std::string	first_name;
+	std::string	last_name;
+	std::string	nickname;
+	std::string	phone_number;
+	std::string	darkest_secret;
+
+	this->_ft_print_add_contact_warning();
+	if (!(PhoneBook::_ft_get_contact_fields(first_name, last_name, nickname,
+		phone_number, darkest_secret)))
+	{
+		return ;
+	}
+	Contact	new_contact(first_name, last_name,
+		nickname, phone_number, darkest_secret);
+	this->_ft_save_contact(new_contact);
+	return ;
+}
+
+void	PhoneBook::ft_search_contact(void) const
+{
+	std::string	index_input;
+	int			index;
+
+	this->_ft_display_summary_contacts();
+	if (this->_contact_count == 0)
+		return ;
+	while (true)
+	{
+		std::cout << "Enter the index of the contact to display :" << std::endl;
+		if (!std::getline(std::cin, index_input))
+			return ;
+		if (!ft_is_numeric(index_input))
+		{
+			std::cout << "Error : invalid index" << std::endl;
+			continue ;
+		}
+		index = std::atoi(index_input.c_str());
+		if (index >= 1 && index <= this->get_contact_count())
+			break ;
+		std::cout << "Error : index " << index;
+		std::cout << " is invalid" << std::endl;
+	}
+	std::cout << this->_contacts[index - 1];
+	return ;
+}
+
+int		PhoneBook::get_contact_count(void) const
+{
+	return (this->_contact_count);
+}
+
+const Contact	&PhoneBook::get_contact(int index) const
+{
+	return (this->_contacts[index]);
+}
+
+void		PhoneBook::_ft_print_add_contact_warning(void) const
 {
 	if (this->_contact_count < 8)
 	{
@@ -118,34 +179,47 @@ void PhoneBook::_ft_save_contact(const Contact &new_contact)
 	this->_next_contact_index = (this->_next_contact_index + 1) % 8;
 }
 
-void	PhoneBook::ft_add_contact(void)
+void	PhoneBook::_ft_display_summary_contacts(void) const
 {
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	darkest_secret;
+	int	i;
 
-	PhoneBook::_ft_print_add_contact_warning();
-	if (!(PhoneBook::_ft_get_contact_fields(first_name, last_name, nickname,
-		phone_number, darkest_secret)))
+	if (this->_contact_count == 0)
 	{
+		std::cout << "The phonebook is empty" << std::endl;	
 		return ;
 	}
-	Contact	new_contact(first_name, last_name,
-		nickname, phone_number, darkest_secret);
-	PhoneBook::_ft_save_contact(new_contact);
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	std::cout << "|     Index|First name| Last name|  Nickname|" << std::endl;
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	i = 0;
+	while (i < this->_contact_count)
+	{
+		this->_contacts[i].ft_display_summary(i + 1);
+		i++;
+	}
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	return ;
 }
 
-void	PhoneBook::ft_search_contact(void)
+std::ostream	&operator<<(std::ostream &o, PhoneBook const &phonebook)
 {
-	std::cout << "Search contact" << std::endl;
-	return ;
-}
+	int	contact_count;
+	int	i;
 
-std::ostream	&operator<<(std::ostream &o, PhoneBook const &i)
-{
-	(void)i;
+	contact_count = phonebook.get_contact_count();
+	if (contact_count == 0)
+	{
+		o << "The phonebook is empty" << std::endl;
+		return (o);
+	}
+	i = 0;
+	while (i < contact_count)
+	{
+		o << "Contact " << (i + 1) << " :" << std::endl;
+		o << phonebook.get_contact(i);
+		if (i < contact_count - 1)
+			std::cout << std::endl;
+		i++;
+	}
 	return (o);
 }

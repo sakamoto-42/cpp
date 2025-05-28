@@ -6,13 +6,21 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:08:19 by julien            #+#    #+#             */
-/*   Updated: 2025/05/26 18:54:24 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/28 09:34:18 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <string>
+#include <iomanip>
 #include "Contact.class.hpp"
 
-Contact::Contact(void)
+Contact::Contact(void) :
+	_first_name(""),
+	_last_name(""),
+	_nickname(""),
+	_phone_number(""),
+	_darkest_secret("")
 {
 	return ;
 }
@@ -56,8 +64,61 @@ Contact	&Contact::operator=(Contact const &rhs)
 	return (*this);
 }
 
-std::ostream	&operator<<(std::ostream &o, Contact const &i)
+void	Contact::ft_display_summary(int index) const
 {
-	(void)i;
+	std::cout << "|";
+	std::cout << std::setw(10) << std::right << index;
+	std::cout << "|";
+	std::cout << std::setw(10) << std::right;
+	std::cout << Contact::_ft_format_summary(this->get_first_name());
+	std::cout << "|";
+	std::cout << std::setw(10) << std::right;
+	std::cout << Contact::_ft_format_summary(this->get_last_name());
+	std::cout << "|";
+	std::cout << std::setw(10) << std::right;
+	std::cout << Contact::_ft_format_summary(this->get_nickname());
+	std::cout << "|";
+	std::cout << std::endl;
+}
+
+std::string	Contact::get_first_name(void) const
+{
+	return (this->_first_name);
+}
+
+std::string	Contact::get_last_name(void) const
+{
+	return (this->_last_name);
+}
+
+std::string	Contact::get_nickname(void) const
+{
+	return (this->_nickname);
+}
+
+std::string	Contact::get_phone_number(void) const
+{
+	return (this->_phone_number);
+}
+
+std::string	Contact::get_darkest_secret(void) const
+{
+	return (this->_darkest_secret);
+}
+
+std::string	Contact::_ft_format_summary(const std::string &data)
+{
+	if (data.length() > 10)
+		return (data.substr(0, 9) + ".");
+	return (data);
+}
+
+std::ostream	&operator<<(std::ostream &o, Contact const &contact)
+{
+	o << "First Name:\t" << contact.get_first_name() << std::endl;
+	o << "Last Name:\t" << contact.get_last_name() << std::endl;
+    o << "Nickname:\t" << contact.get_nickname() << std::endl;
+    o << "Phone Number:\t" << contact.get_phone_number() << std::endl;
+    o << "Darkest Secret:\t" << contact.get_darkest_secret() << std::endl;
 	return (o);
 }

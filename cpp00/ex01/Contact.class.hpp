@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:08:16 by julien            #+#    #+#             */
-/*   Updated: 2025/05/27 13:14:58 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/28 09:23:04 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,17 @@ class	Contact
 
 		Contact &operator=(Contact const &rhs);
 
+		void		ft_display_summary(int index) const;
+
+		std::string			get_first_name(void) const;
+		std::string			get_last_name(void) const;
+		std::string			get_nickname(void) const;
+		std::string			get_phone_number(void) const;
+		std::string			get_darkest_secret(void) const;
+
 	private:
+		static std::string	_ft_format_summary(const std::string &data);
+
 		std::string	_first_name;
 		std::string	_last_name;
 		std::string	_nickname;
@@ -40,6 +50,6 @@ class	Contact
 		std::string	_darkest_secret;
 };
 
-std::ostream	&operator<<(std::ostream &o, Contact const &i);
+std::ostream	&operator<<(std::ostream &o, Contact const &contact);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:07:11 by julien            #+#    #+#             */
-/*   Updated: 2025/05/26 19:30:27 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/28 08:39:21 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ int	main(int argc, char *argv[])
 		if (command == "ADD")
 			myPhoneBook.ft_add_contact();
 		else if (command == "SEARCH")
+		{
 			myPhoneBook.ft_search_contact();
+			//std::cout << myPhoneBook;
+		}
 		else if (command == "EXIT")
 			break ;
 		else
