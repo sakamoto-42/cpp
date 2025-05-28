@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
 			Account.cpp \
-			main.cpp \
+			tests.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 
