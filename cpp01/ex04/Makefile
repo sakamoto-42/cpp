@@ -1,12 +1,8 @@
-NAME = my_awesome_phonebook
+NAME = sed_is_for_losers
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS_FILES = \
-			PhoneBook.class.cpp \
-			Contact.class.cpp \
-			utils.cpp \
-			main.cpp \
+SRCS_FILES = main.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

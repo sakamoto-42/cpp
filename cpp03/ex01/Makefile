@@ -1,12 +1,11 @@
-NAME = my_awesome_phonebook
+NAME = serena_my_love
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
-			PhoneBook.class.cpp \
-			Contact.class.cpp \
-			utils.cpp \
+			ClapTrap.cpp \
 			main.cpp \
+			ScavTrap.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

@@ -1,11 +1,9 @@
-NAME = my_awesome_phonebook
+NAME = harl_2.0
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
-			PhoneBook.class.cpp \
-			Contact.class.cpp \
-			utils.cpp \
+			Harl.cpp \
 			main.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)

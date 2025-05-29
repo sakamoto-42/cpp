@@ -1,11 +1,8 @@
-NAME = my_awesome_phonebook
+NAME =  abstract_class
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
-			PhoneBook.class.cpp \
-			Contact.class.cpp \
-			utils.cpp \
 			main.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)

@@ -1,12 +1,11 @@
-NAME = my_awesome_phonebook
+NAME = hi_this_is_brain
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
-			PhoneBook.class.cpp \
-			Contact.class.cpp \
-			utils.cpp \
 			main.cpp \
+			Zombie.cpp \
+			zombieHorde.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

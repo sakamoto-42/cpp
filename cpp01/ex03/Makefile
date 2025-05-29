@@ -1,12 +1,13 @@
-NAME = my_awesome_phonebook
+NAME = unnecessary_violence
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
-			PhoneBook.class.cpp \
-			Contact.class.cpp \
-			utils.cpp \
+			HumanA.cpp \
+			HumanB.cpp \
+			Zombie.cpp \
 			main.cpp \
+			Weapon.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 
