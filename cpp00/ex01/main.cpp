@@ -6,14 +6,14 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:07:11 by julien            #+#    #+#             */
-/*   Updated: 2025/05/28 08:39:21 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/28 21:42:46 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include "PhoneBook.class.hpp"
-#include "Contact.class.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 void	ft_print_instructions(void)
 {
@@ -37,10 +37,7 @@ int	main(int argc, char *argv[])
 		if (command == "ADD")
 			myPhoneBook.ft_add_contact();
 		else if (command == "SEARCH")
-		{
 			myPhoneBook.ft_search_contact();
-			//std::cout << myPhoneBook;
-		}
 		else if (command == "EXIT")
 			break ;
 		else

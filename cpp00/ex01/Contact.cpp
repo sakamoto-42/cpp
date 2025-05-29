@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:08:19 by julien            #+#    #+#             */
-/*   Updated: 2025/05/28 09:34:18 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/28 21:41:50 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(void) :
 	_first_name(""),
