@@ -6,16 +6,15 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 17:15:36 by julien            #+#    #+#             */
-/*   Updated: 2025/05/30 14:20:46 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/30 14:42:17 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie::Zombie(void) : _name("Default")
 {
-	this->_name = "Random";
 	std::cout << this->_name << ": Constructor called" << std::endl;
     
 	return ;
@@ -48,7 +47,7 @@ Zombie	&Zombie::operator=(Zombie const &rhs)
 	return (*this);
 }
 
-void	Zombie::announce(void)
+void	Zombie::announce(void) const
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 	return ;

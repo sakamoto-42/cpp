@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 17:15:11 by julien            #+#    #+#             */
-/*   Updated: 2025/05/30 14:21:28 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/30 14:37:45 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	main(void)
 	Zombie	zombie_instance("Baz");
 	zombie_instance.announce();
 	std::cout << std::endl;
-	Zombie	zombie_random_instance;
-	zombie_random_instance.announce();
+	Zombie	zombie_default_instance;
+	zombie_default_instance.announce();
 	std::cout << std::endl;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 17:15:39 by julien            #+#    #+#             */
-/*   Updated: 2025/05/30 14:07:05 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/30 14:38:43 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	Zombie
 
 		Zombie &operator=(Zombie const &rhs);
 
-		void		announce(void);
+		void		announce(void) const;
 
 		std::string	get_name(void) const;
 
