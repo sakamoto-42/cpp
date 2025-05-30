@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   newZombie.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/29 17:15:39 by julien            #+#    #+#             */
-/*   Updated: 2025/05/30 14:07:05 by julien           ###   ########.fr       */
+/*   Created: 2025/05/30 13:49:34 by julien            #+#    #+#             */
+/*   Updated: 2025/05/30 14:16:45 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef NEW_ZOMBIE_HPP
+# define NEW_ZOMBIE_HPP
 
-# include <iostream>
 # include <string>
+# include "Zombie.hpp"
 
-class	Zombie
-{
-	public:
-		Zombie(void);
-		Zombie(std::string name);
-		Zombie(Zombie const &src);
-		virtual ~Zombie(void);
-
-		Zombie &operator=(Zombie const &rhs);
-
-		void		announce(void);
-
-		std::string	get_name(void) const;
-
-	private:
-		std::string	_name;
-};
-
-std::ostream	&operator<<(std::ostream &o, Zombie const &zombie);
+Zombie	*newZombie(std::string name);
 
 #endif
