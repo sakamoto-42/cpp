@@ -6,11 +6,12 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 17:15:36 by julien            #+#    #+#             */
-/*   Updated: 2025/05/30 14:42:17 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/30 15:42:00 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include "Zombie.hpp"
 
 Zombie::Zombie(void) : _name("Default")
