@@ -2,10 +2,7 @@ NAME = hi_this_is_brain
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS_FILES = \
-			main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp \
+SRCS_FILES = main.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 
