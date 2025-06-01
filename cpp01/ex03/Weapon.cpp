@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:47:53 by julien            #+#    #+#             */
-/*   Updated: 2025/06/01 16:52:25 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/01 19:14:10 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include "Weapon.hpp"
 
-Weapon::Weapon(void) : _type("default")
+Weapon::Weapon(void) : _type("default weapon")
 {
 	std::cout << "Weapon " << "[" << this->_type << "]";
 	std::cout << ": Constructor called" << std::endl;
@@ -52,14 +52,13 @@ Weapon	&Weapon::operator=(Weapon const &rhs)
 
 std::string const	&Weapon::getType(void) const
 {
-	std::string	type = this->_type;
-	std::string	&typeREF = type;
-	return (typeREF);
+	return (this->_type);
 }
 
 void	Weapon::setType(std::string type)
 {
 	this->_type = type;
+	std::cout << "Weapon type set to " << this->_type << std::endl;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 16:29:27 by julien            #+#    #+#             */
-/*   Updated: 2025/06/01 17:40:29 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/01 18:42:03 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class	HumanA
 
 		std::string	const	getName(void) const;
 		Weapon	const		&getWeapon(void) const;
+		void				attack(void) const;
 
 	private:
 		HumanA(void);
