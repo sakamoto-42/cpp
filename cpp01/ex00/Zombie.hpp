@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 17:15:39 by julien            #+#    #+#             */
-/*   Updated: 2025/05/30 14:38:43 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/31 09:31:21 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	Zombie
 		Zombie(Zombie const &src);
 		virtual ~Zombie(void);
 
-		Zombie &operator=(Zombie const &rhs);
+		Zombie		&operator=(Zombie const &rhs);
 
 		void		announce(void) const;
 

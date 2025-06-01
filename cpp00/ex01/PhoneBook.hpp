@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:08:13 by julien            #+#    #+#             */
-/*   Updated: 2025/05/28 21:42:27 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/31 09:31:28 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	PhoneBook
 		PhoneBook(PhoneBook const &src);
 		virtual	~PhoneBook(void);
 
-		PhoneBook &operator=(PhoneBook const &rhs);
+		PhoneBook		&operator=(PhoneBook const &rhs);
 
 		void			ft_add_contact(void);
 		void			ft_search_contact(void) const;

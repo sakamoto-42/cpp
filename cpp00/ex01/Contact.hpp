@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:08:16 by julien            #+#    #+#             */
-/*   Updated: 2025/05/28 21:41:45 by julien           ###   ########.fr       */
+/*   Updated: 2025/05/31 09:31:03 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class	Contact
 		Contact(Contact const &src);
 		virtual	~Contact(void);
 
-		Contact &operator=(Contact const &rhs);
+		Contact				&operator=(Contact const &rhs);
 
-		void		ft_display_summary(int index) const;
+		void				ft_display_summary(int index) const;
 
 		std::string			get_first_name(void) const;
 		std::string			get_last_name(void) const;

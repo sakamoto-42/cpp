@@ -5,7 +5,6 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS_FILES = \
 			HumanA.cpp \
 			HumanB.cpp \
-			Zombie.cpp \
 			main.cpp \
 			Weapon.cpp \
 
