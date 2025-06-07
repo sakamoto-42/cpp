@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:08:19 by julien            #+#    #+#             */
-/*   Updated: 2025/05/31 10:08:22 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/07 10:53:14 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,15 @@ Contact	&Contact::operator=(Contact const &rhs)
 void	Contact::ft_display_summary(int index) const
 {
 	std::cout << "|";
-	std::cout << std::setw(10) << std::right << index;
+	std::cout << std::setw(10) << index;
 	std::cout << "|";
-	std::cout << std::setw(10) << std::right;
+	std::cout << std::setw(10);
 	std::cout << Contact::_ft_format_summary(this->get_first_name());
 	std::cout << "|";
-	std::cout << std::setw(10) << std::right;
+	std::cout << std::setw(10);
 	std::cout << Contact::_ft_format_summary(this->get_last_name());
 	std::cout << "|";
-	std::cout << std::setw(10) << std::right;
+	std::cout << std::setw(10);
 	std::cout << Contact::_ft_format_summary(this->get_nickname());
 	std::cout << "|";
 	std::cout << std::endl;

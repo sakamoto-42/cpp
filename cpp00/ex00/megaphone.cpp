@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:24:44 by julien            #+#    #+#             */
-/*   Updated: 2025/05/23 17:53:19 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/07 10:44:43 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int	main(int argc, char *argv[])
 {
+	char	*ptr;
 	if (argc == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
@@ -23,7 +24,7 @@ int	main(int argc, char *argv[])
 	int i = 1;
 	while (i < argc)
 	{
-		char	*ptr = argv[i];
+		ptr = argv[i];
 		while (*ptr)
 		{
 			std::cout << (char)toupper(*ptr);

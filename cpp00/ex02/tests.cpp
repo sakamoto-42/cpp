@@ -12,6 +12,26 @@
 #include <functional>
 #include "Account.hpp"
 
+#include <iostream>
+#include <fstream>
+
+struct Logger {
+    std::ofstream file;
+
+    Logger() {
+        file.open("test.log");
+        if (file.is_open()) {
+            std::cout.rdbuf(file.rdbuf());
+        }
+    }
+
+    ~Logger() {
+        file.close();
+    }
+};
+
+//static Logger logger;
+
 int		main( void ) {
 
 	typedef std::vector<Account::t>							  accounts_t;

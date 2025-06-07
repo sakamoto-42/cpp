@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 19:07:11 by julien            #+#    #+#             */
-/*   Updated: 2025/05/28 21:42:46 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/07 11:17:13 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,14 @@ int	main(int argc, char *argv[])
 			myPhoneBook.ft_search_contact();
 		else if (command == "EXIT")
 			break ;
-		else
+		/*else if (command == "DEBUG")
+		{
+			std::cout << myPhoneBook;
+		}*/
+		/*else
+		{
 			std::cout << "Invalid command" << std::endl;
+		}*/
 	}
 	std::cout << "Bye !" << std::endl;
 	return (0);
