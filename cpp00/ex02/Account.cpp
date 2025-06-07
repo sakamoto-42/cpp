@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 10:48:06 by julien            #+#    #+#             */
-/*   Updated: 2025/06/07 12:14:13 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/07 14:22:13 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,11 +164,11 @@ void	Account::_displayTimestamp(void)
 	struct tm	newtime;
 	time_t		ltime;
 	char		buf[16];
-
-	//std::cout << "[19920104_091532]";
+	
 	ltime = time(0);
 	localtime_r(&ltime, &newtime);
 	strftime(buf, sizeof(buf), "%Y%m%d_%H%M%S", &newtime);
 	std::cout << "[" << buf << "]";
+	//std::cout << "[19920104_091532]";
 	return ;
 }
