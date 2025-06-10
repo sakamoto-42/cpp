@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 17:15:36 by julien            #+#    #+#             */
-/*   Updated: 2025/05/30 15:19:07 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/09 11:27:20 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,27 @@
 
 Zombie::Zombie(void) : _name("Default")
 {
-	std::cout << this->_name << ": Constructor called" << std::endl;
+	std::cout << this->_name << " : Constructor called" << std::endl;
     
 	return ;
 }
 
 Zombie::Zombie(std::string name) : _name(name)
 {
-	std::cout << name << ": Constructor called" << std::endl;
+	std::cout << name << " : Constructor called" << std::endl;
     return ;
 }
 
 Zombie::Zombie(Zombie const &src)
 {
+	std::cout << this->get_name() << " : Copy Constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->_name << ": Destructor called" << std::endl;
+	std::cout << this->_name << " : Destructor called" << std::endl;
 	return ;
 }
 
@@ -49,7 +50,7 @@ Zombie		&Zombie::operator=(Zombie const &rhs)
 
 void		Zombie::announce(void) const
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 	return ;
 }
 

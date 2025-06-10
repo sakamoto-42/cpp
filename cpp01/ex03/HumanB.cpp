@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 16:36:39 by julien            #+#    #+#             */
-/*   Updated: 2025/06/01 19:13:57 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/09 11:25:58 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
 
 HumanB::HumanB(HumanB const &src) : _name(src._name), _weapon(src._weapon)
 {
+	std::cout << "HumanB : Copy Constructor called" << std::endl;
 	return ;
 }
 

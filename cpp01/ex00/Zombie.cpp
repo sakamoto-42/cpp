@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 17:15:36 by julien            #+#    #+#             */
-/*   Updated: 2025/05/30 15:42:00 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/09 11:27:52 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Zombie::Zombie(std::string name) : _name(name)
 
 Zombie::Zombie(Zombie const &src)
 {
+	std::cout << this->get_name() << " : Copy Constructor called" << std::endl;
 	*this = src;
 	return ;
 }

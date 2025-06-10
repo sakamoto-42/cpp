@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:47:53 by julien            #+#    #+#             */
-/*   Updated: 2025/06/01 19:14:10 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/09 11:24:57 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Weapon::Weapon(std::string type) : _type(type)
 
 Weapon::Weapon(Weapon const &src)
 {
+	std::cout << "Weapon : Copy Constructor called" << std::endl;
 	*this = src;
 	return ;
 }

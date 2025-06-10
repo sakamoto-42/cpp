@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 16:32:24 by julien            #+#    #+#             */
-/*   Updated: 2025/06/01 18:42:27 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/09 11:25:13 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
 
 HumanA::HumanA(HumanA const &src) : _name(src._name), _weapon(src._weapon)
 {
+	std::cout << "HumanA : Copy Constructor called" << std::endl;
 	return ;
 }
 
