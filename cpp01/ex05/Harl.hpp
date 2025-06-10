@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 11:18:23 by julien            #+#    #+#             */
-/*   Updated: 2025/06/09 13:57:38 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/10 09:56:25 by juduchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,15 @@ class Harl
 
 		void complain(std::string level) const;
 
+		static const std::string getLevel(int index);
+
 	private:
 		void _debug(void) const;
 		void _info(void) const;
 		void _warning(void) const;
 		void _error(void) const;
 
-		static const std::string _levels[];
-		enum class Level : int {
-			DEBUG = 0,
-			INFO,
-			WARNING,
-			ERROR
-		};
+		static const std::string _levels[4];
 		static void (Harl::* const _dispatch_table[4])(void) const;
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 16:32:24 by julien            #+#    #+#             */
-/*   Updated: 2025/06/09 11:25:13 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/10 10:40:06 by juduchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
 {
-	std::cout << "HumanA : Constructor called with :" << std::endl;
+	std::cout << "HumanA : Parametric Constructor called with :" << std::endl;
 	std::cout << "_name : " << this->_name << std::endl;
 	std::cout << "_weapon : ";
 	std::cout << this->_weapon.getType() << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 17:15:36 by julien            #+#    #+#             */
-/*   Updated: 2025/06/09 11:27:52 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/10 10:35:20 by juduchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@
 
 Zombie::Zombie(void) : _name("Default")
 {
-	std::cout << this->_name << ": Constructor called" << std::endl;
-    
+	std::cout << this->_name << " : Default Constructor called" << std::endl;
 	return ;
 }
 
 Zombie::Zombie(std::string name) : _name(name)
 {
-	std::cout << name << ": Constructor called" << std::endl;
+	std::cout << name << " : Parametric Constructor called" << std::endl;
     return ;
 }
 
@@ -36,7 +35,7 @@ Zombie::Zombie(Zombie const &src)
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->_name << ": Destructor called" << std::endl;
+	std::cout << this->_name << " : Destructor called" << std::endl;
 	return ;
 }
 
@@ -51,7 +50,7 @@ Zombie	&Zombie::operator=(Zombie const &rhs)
 
 void	Zombie::announce(void) const
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 	return ;
 }
 

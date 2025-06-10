@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 16:36:39 by julien            #+#    #+#             */
-/*   Updated: 2025/06/09 11:25:58 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/10 10:40:54 by juduchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ HumanB::HumanB(void) : _name("default name"), _weapon(NULL)
 
 HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
 {
-	std::cout << "HumanB : Constructor called with :" << std::endl;
+	std::cout << "HumanB : Parametric Constructor called with :" << std::endl;
 	std::cout << "_name : " << this->_name << std::endl;
 	std::cout << "_weapon : ";
 	if (this->_weapon == NULL)

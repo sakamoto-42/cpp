@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
+/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 11:18:15 by julien            #+#    #+#             */
-/*   Updated: 2025/06/09 14:01:52 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/10 10:14:16 by juduchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include "Harl.hpp"
 
-const	std::string Harl::_levels[] = {
+const	std::string Harl::_levels[4] = {
 	"DEBUG",
 	"INFO",
 	"WARNING",
@@ -56,26 +56,35 @@ Harl &Harl::operator=(Harl const &rhs)
 	return *this;
 }
 
+const std::string	Harl::getLevel(int index)
+{
+	if (index >= 0 && index < 4)
+	{
+		return (_levels[index]);
+	}
+	return ("");
+}
+
 void Harl::complain(std::string level) const
 {
 	int		i;
-	Level	level_enum;
 
 	i = 0;
 	while (i < 4)
 	{
-		if (level == _levels[i])
+		if (level == getLevel(i))
 		{
-			level_enum = static_cast<Level>(i);
-			i++;
+			(this->*_dispatch_table[i])();
+			return ;
 		}
+		i++;
 	}
 	std::cout << "Error : invalid level" << std::endl;
 }
 
 void	Harl::_debug(void) const
 {
-	std::cout << "I love having extra bacon for my ";
+	std::cout << "[DEBUG]\nI love having extra bacon for my ";
 	std::cout << "7XL-double-cheese-triple-pickle-special-ketchup burger. ";
 	std::cout << "I really do!" << std::endl;
 	return ;
@@ -83,7 +92,7 @@ void	Harl::_debug(void) const
 
 void	Harl::_info(void) const
 {
-	std::cout << "I cannot believe adding extra bacon costs more money. ";
+	std::cout << "[INFO]\nI cannot believe adding extra bacon costs more money. ";
 	std::cout << "You didn't put enough bacon in my burger! ";
 	std::cout << "If you did, I wouldn't be asking for more!" << std::endl;
 	return ;
@@ -91,7 +100,7 @@ void	Harl::_info(void) const
 
 void	Harl::_warning(void) const
 {
-	std::cout << "I think I deserve to have some extra bacon for free. ";
+	std::cout << "[WARNING]\nI think I deserve to have some extra bacon for free. ";
 	std::cout << "I've been coming for years, ";
 	std::cout << "whereas you started working here just last month." << std::endl;
 	return ;
@@ -99,7 +108,7 @@ void	Harl::_warning(void) const
 
 void	Harl::_error(void) const
 {
-	std::cout << "This is unacceptable! I want to speak to the manager now.";
+	std::cout << "[ERROR]\nThis is unacceptable! I want to speak to the manager now.";
 	std::cout << std::endl;
 	return ;
 }
