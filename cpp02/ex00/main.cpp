@@ -6,7 +6,7 @@
 /*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 08:31:39 by juduchar          #+#    #+#             */
-/*   Updated: 2025/06/13 08:42:09 by juduchar         ###   ########.fr       */
+/*   Updated: 2025/06/13 08:48:02 by juduchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(void)
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
-	std::cout << a << std::endl;
 
 	return (0);
 }
