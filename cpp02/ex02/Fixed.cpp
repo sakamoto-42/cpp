@@ -6,7 +6,7 @@
 /*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 08:18:38 by juduchar          #+#    #+#             */
-/*   Updated: 2025/06/13 11:58:39 by juduchar         ###   ########.fr       */
+/*   Updated: 2025/06/13 12:01:31 by juduchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,28 +130,28 @@ Fixed	Fixed::operator--(int fixed_point_number)
 	return (fixed_point_number);
 }
 
-Fixed		&min(Fixed &fixed_point_number_a, Fixed &fixed_point_number_b)
+Fixed		&Fixed::min(Fixed &fixed_point_number_a, Fixed &fixed_point_number_b)
 {
 	if (fixed_point_number_a <= fixed_point_number_b)
 		return (fixed_point_number_a);
 	return (fixed_point_number_b);
 }
 
-Fixed		&max(Fixed &fixed_point_number_a, Fixed &fixed_point_number_b)
+Fixed		&Fixed::max(Fixed &fixed_point_number_a, Fixed &fixed_point_number_b)
 {
 	if (fixed_point_number_a >= fixed_point_number_b)
 		return (fixed_point_number_a);
 	return (fixed_point_number_b);
 }
 
-const Fixed	&min(Fixed const &fixed_point_number_a, Fixed const &fixed_point_number_b)
+const Fixed	&Fixed::min(Fixed const &fixed_point_number_a, Fixed const &fixed_point_number_b)
 {
 	if (&fixed_point_number_a <= &fixed_point_number_b)
 		return (fixed_point_number_a);
 	return (fixed_point_number_b);
 }
 
-const Fixed	&max(Fixed const &fixed_point_number_a, Fixed const &fixed_point_number_b)
+const Fixed	&Fixed::max(Fixed const &fixed_point_number_a, Fixed const &fixed_point_number_b)
 {
 	if (&fixed_point_number_a >= &fixed_point_number_b)
 		return (fixed_point_number_a);
