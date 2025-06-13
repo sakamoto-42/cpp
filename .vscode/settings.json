@@ -52,6 +52,11 @@
 		"typeinfo": "cpp",
 		"variant": "cpp",
 		"text_encoding": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"chrono": "cpp",
+		"cstring": "cpp",
+		"map": "cpp",
+		"ratio": "cpp",
+		"cinttypes": "cpp"
 	}
 }
