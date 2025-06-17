@@ -26,32 +26,32 @@ class	Fixed
 
 		Fixed	&operator=(Fixed const &rhs);
 
-		bool	operator>(Fixed const &rhs);
-		bool	operator<(Fixed const &rhs);
-		bool	operator<=(Fixed const &rhs);
-		bool	operator>=(Fixed const &rhs);
-		bool	operator==(Fixed const &rhs);
-		bool	operator!=(Fixed const &rhs);
-		float	operator+(Fixed const &rhs);
-		float	operator-(Fixed const &rhs);
-		float	operator*(Fixed const &rhs);
-		float	operator/(Fixed const &rhs);
-		Fixed	operator++(int fixed_point_number);
-		Fixed	operator++();
-		Fixed	operator--(int fixed_point_number);
-		Fixed	operator--();
+		bool	operator>(Fixed const &rhs) const;
+		bool	operator<(Fixed const &rhs) const;
+		bool	operator<=(Fixed const &rhs) const;
+		bool	operator>=(Fixed const &rhs) const;
+		bool	operator==(Fixed const &rhs) const;
+		bool	operator!=(Fixed const &rhs) const;
+		Fixed	operator+(Fixed const &rhs) const;
+		Fixed	operator-(Fixed const &rhs) const;
+		Fixed	operator*(Fixed const &rhs) const;
+		Fixed	operator/(Fixed const &rhs) const;
+		Fixed	operator++(int);
+		Fixed	&operator++();
+		Fixed	operator--(int);
+		Fixed	&operator--();
 		
 
 		float				toFloat(void) const;
 		int					toInt(void) const;
-		static Fixed		&min(Fixed &fixed_point_number_a, Fixed &fixed_point_number_b);
-		static Fixed		&max(Fixed &fixed_point_number_a, Fixed &fixed_point_number_b);
-		static const Fixed	&min(Fixed const &fixed_point_number_a, Fixed const &fixed_point_number_b);
-		static const Fixed	&max(Fixed const &fixed_point_number_a, Fixed const &fixed_point_number_b);
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static const Fixed	&min(Fixed const &a, Fixed const &b);
+		static const Fixed	&max(Fixed const &a, Fixed const &b);
 		
 
 		int		getRawBits(void) const;
-		void	setRawBit(int const raw);
+		void	setRawBits(int const raw);
 
 	private:
 		int					_fixed_point_value;

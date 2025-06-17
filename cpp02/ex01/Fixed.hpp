@@ -30,7 +30,7 @@ class	Fixed
 		int		toInt(void) const;
 
 		int		getRawBits(void) const;
-		void	setRawBit(int const raw);
+		void	setRawBits(int const raw);
 
 	private:
 		int					_fixed_point_value;

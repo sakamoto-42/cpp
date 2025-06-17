@@ -56,106 +56,127 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 	return (*this);
 }
 
-bool	Fixed::operator>(Fixed const &rhs)
+bool	Fixed::operator>(Fixed const &rhs) const
 {
-	return (this->toFloat() > rhs.toFloat());
+	return (this->_fixed_point_value > rhs.getRawBits());
 }
 
-bool	Fixed::operator<(Fixed const &rhs)
+bool	Fixed::operator<(Fixed const &rhs) const
 {
-	return (this->toFloat() < rhs.toFloat());
+	return (this->_fixed_point_value < rhs.getRawBits());
 }
 
-bool	Fixed::operator<=(Fixed const &rhs)
+bool	Fixed::operator<=(Fixed const &rhs) const
 {
-	return (this->toFloat() <= rhs.toFloat());
+	return (this->_fixed_point_value <= rhs.getRawBits());
 }
 
-bool	Fixed::operator>=(Fixed const &rhs)
+bool	Fixed::operator>=(Fixed const &rhs) const
 {
-	return (this->toFloat() >= rhs.toFloat());
+	return (this->_fixed_point_value >= rhs.getRawBits());
 }
 
-bool	Fixed::operator==(Fixed const &rhs)
+bool	Fixed::operator==(Fixed const &rhs) const
 {
-	return (this->toFloat() == rhs.toFloat());
+	return (this->_fixed_point_value == rhs.getRawBits());
 }
 
-bool	Fixed::operator!=(Fixed const &rhs)
+bool	Fixed::operator!=(Fixed const &rhs) const
 {
-	return (this->toFloat() != rhs.toFloat());
+	return (this->_fixed_point_value != rhs.getRawBits());
 }
 
-float	Fixed::operator+(Fixed const &rhs)
+Fixed	Fixed::operator+(Fixed const &rhs) const
 {
-	return(this->toFloat() + rhs.toFloat());
+	Fixed	result;
+
+	result.setRawBits(this->_fixed_point_value + rhs.getRawBits());
+	return(result);
 }
 
-float	Fixed::operator-(Fixed const &rhs)
+Fixed	Fixed::operator-(Fixed const &rhs) const
 {
-	return (this->toFloat() - rhs.toFloat());
+	Fixed	result;
+
+	result.setRawBits(this->_fixed_point_value - rhs.getRawBits());
+	return (result);
 }
 
-float	Fixed::operator*(Fixed const &rhs)
+Fixed	Fixed::operator*(Fixed const &rhs) const
 {
-	return (this->toFloat() * rhs.toFloat());
+	long long	tmp;
+	Fixed		result;
+
+	tmp = (long long)this->_fixed_point_value * (long long)rhs.getRawBits();
+	result.setRawBits(tmp >> _fractional_bits);
+	return (result);
 }
 
-float	Fixed::operator/(Fixed const &rhs)
+Fixed	Fixed::operator/(Fixed const &rhs) const
 {
-	return (this->toFloat() / rhs.toFloat());
+	long long	tmp;
+	Fixed		result;
+
+	tmp = (long long)this->_fixed_point_value << _fractional_bits;
+	result.setRawBits(tmp / rhs.getRawBits());
+	return (result);
 }
 
-Fixed	Fixed::operator++()
+Fixed	&Fixed::operator++()
 {
 	this->_fixed_point_value++;
 	return (*this);
 }
 
-Fixed	Fixed::operator++(int fixed_point_number)
+Fixed	Fixed::operator++(int)
 {
-	++this->_fixed_point_value;
-	return (fixed_point_number);
+	Fixed	tmp;
+	tmp = *this;
+	this->_fixed_point_value++;
+	return (tmp);
 }
 
-Fixed	Fixed::operator--()
+Fixed	&Fixed::operator--()
 {
 	this->_fixed_point_value--;
 	return (*this);
 }
 
-Fixed	Fixed::operator--(int fixed_point_number)
+Fixed	Fixed::operator--(int)
 {
-	--this->_fixed_point_value;
-	return (fixed_point_number);
+	Fixed	tmp;
+
+	tmp = *this;
+	this->_fixed_point_value--;
+	return (tmp);
 }
 
-Fixed		&Fixed::min(Fixed &fixed_point_number_a, Fixed &fixed_point_number_b)
+Fixed		&Fixed::min(Fixed &a, Fixed &b)
 {
-	if (fixed_point_number_a <= fixed_point_number_b)
-		return (fixed_point_number_a);
-	return (fixed_point_number_b);
+	if (a <= b)
+		return (a);
+	return (b);
 }
 
-Fixed		&Fixed::max(Fixed &fixed_point_number_a, Fixed &fixed_point_number_b)
+Fixed		&Fixed::max(Fixed &a, Fixed &b)
 {
-	if (fixed_point_number_a >= fixed_point_number_b)
-		return (fixed_point_number_a);
-	return (fixed_point_number_b);
+	if (a >= b)
+		return (a);
+	return (b);
 }
 
-const Fixed	&Fixed::min(Fixed const &fixed_point_number_a, Fixed const &fixed_point_number_b)
+const Fixed	&Fixed::min(Fixed const &a, Fixed const &b)
 {
-	if (&fixed_point_number_a <= &fixed_point_number_b)
-		return (fixed_point_number_a);
-	return (fixed_point_number_b);
+	if (a <= b)
+		return (a);
+	return (b);
 }
 
-const Fixed	&Fixed::max(Fixed const &fixed_point_number_a, Fixed const &fixed_point_number_b)
+const Fixed	&Fixed::max(Fixed const &a, Fixed const &b)
 {
-	if (&fixed_point_number_a >= &fixed_point_number_b)
-		return (fixed_point_number_a);
-	return (fixed_point_number_b);
+	if (a >= b)
+		return (a);
+	return (b);
 }
 
 int		Fixed::getRawBits(void) const
@@ -163,7 +184,7 @@ int		Fixed::getRawBits(void) const
 	return (this->_fixed_point_value);
 }
 
-void	Fixed::setRawBit(int const raw)
+void	Fixed::setRawBits(int const raw)
 {
 	this->_fixed_point_value = raw;
 	return ;
