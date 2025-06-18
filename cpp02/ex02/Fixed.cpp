@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 08:18:38 by juduchar          #+#    #+#             */
-/*   Updated: 2025/06/13 12:01:31 by juduchar         ###   ########.fr       */
+/*   Updated: 2025/06/18 19:54:44 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,7 @@ Fixed	&Fixed::operator++()
 Fixed	Fixed::operator++(int)
 {
 	Fixed	tmp;
+
 	tmp = *this;
 	this->_fixed_point_value++;
 	return (tmp);
@@ -199,7 +200,6 @@ float	Fixed::toFloat(void) const
 
 int		Fixed::toInt(void) const
 {
-	
 	return (this->_fixed_point_value >> _fractional_bits);	
 }
 
