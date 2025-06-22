@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 08:31:39 by juduchar          #+#    #+#             */
-/*   Updated: 2025/06/22 16:55:21 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/22 17:00:16 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,37 +43,37 @@ int main(void) {
         std::cout << std::boolalpha;
 
         std::cout << "Test > operator :" << std::endl;
-        std::cout << "b(10.5f) > a(20.5f)  : " << (b > a) << " (résultat attendu : true)" << std::endl;
+        std::cout << "b(20.5f) > a(10.5f)  : " << (b > a) << " (résultat attendu : true)" << std::endl;
         std::cout << "a(10.5f) > b(20.5f)  : " << (a > b) << " (résultat attendu : false)" << std::endl;
-        std::cout << "a(10.5f) > c(20.5f)  : " << (a > c) << " (résultat attendu : false)" << std::endl;
+        std::cout << "a(10.5f) > c(10.5f)  : " << (a > c) << " (résultat attendu : false)" << std::endl;
         std::cout << std::endl;
 
         std::cout << "Test < operator :" << std::endl;
         std::cout << "a(10.5f) < b(20.5f)  : " << (a < b) << " (résultat attendu: true)" << std::endl;
-        std::cout << "b(10.5f) < a(20.5f)  : " << (b < a) << " (résultat attendu: false)" << std::endl;
-        std::cout << "a(10.5f) < c(20.5f)  : " << (a < c) << " (résultat attendu: false)" << std::endl;
+        std::cout << "b(20.5f) < a(10.5f)  : " << (b < a) << " (résultat attendu: false)" << std::endl;
+        std::cout << "a(10.5f) < c(10.5f)  : " << (a < c) << " (résultat attendu: false)" << std::endl;
         std::cout << std::endl;
 
         std::cout << "Test <= operator :" << std::endl;
-        std::cout << "a(10.5f) <= b(10.5f) : " << (a <= b) << " (résultat attendu: true)" << std::endl;
+        std::cout << "a(10.5f) <= b(20.5f) : " << (a <= b) << " (résultat attendu: true)" << std::endl;
         std::cout << "a(10.5f) <= c(10.5f) : " << (a <= c) << " (résultat attendu: true)" << std::endl;
-        std::cout << "b(10.5f) <= a(10.5f) : " << (b <= a) << " (résultat attendu: false)" << std::endl;
+        std::cout << "b(20.5f) <= a(10.5f) : " << (b <= a) << " (résultat attendu: false)" << std::endl;
         std::cout << std::endl;
 
         std::cout << "Test >= operator :" << std::endl;
-        std::cout << "b(10.5f) >= a(10.5f) : " << (b >= a) << " (résultat attendu : true)" << std::endl;
+        std::cout << "b(20.5f) >= a(10.5f) : " << (b >= a) << " (résultat attendu : true)" << std::endl;
         std::cout << "a(10.5f) >= c(10.5f) : " << (a >= c) << " (résultat attendu : true)" << std::endl;
         std::cout << "a(10.5f) >= b(10.5f) : " << (a >= b) << " (résultat attendu : false)" << std::endl;
         std::cout << std::endl;
 
         std::cout << "Test == operator :" << std::endl;
         std::cout << "a(10.5f) == c(10.5f) : " << (a == c) << " (résultat attendu : true)" << std::endl;
-        std::cout << "a(10.5f) == b(10.5f) : " << (a == b) << " (résultat attendu : false)" << std::endl;
+        std::cout << "a(10.5f) == b(20.5f) : " << (a == b) << " (résultat attendu : false)" << std::endl;
         std::cout << std::endl;
 
         std::cout << "Test != operator :" << std::endl;
         std::cout << "a(10.5f) != b(20.5f) : " << (a != b) << " (résultat attendu : true)" << std::endl;
-        std::cout << "a(10.5f) != c(20.5f) : " << (a != c) << " (résultat attendu : false)" << std::endl;
+        std::cout << "a(10.5f) != c(10.5f) : " << (a != c) << " (résultat attendu : false)" << std::endl;
         
         std::cout << std::endl;
         std::cout << std::noboolalpha;
