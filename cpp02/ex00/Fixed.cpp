@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 08:18:38 by juduchar          #+#    #+#             */
-/*   Updated: 2025/06/13 08:43:11 by juduchar         ###   ########.fr       */
+/*   Updated: 2025/06/24 08:57:55 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBitss member function called" << std::endl;
+	std::cout << "setRawBits member function called" << std::endl;
 	this->_fixed_point_value = raw;
 	return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 08:02:52 by juduchar          #+#    #+#             */
-/*   Updated: 2025/06/13 11:54:39 by juduchar         ###   ########.fr       */
+/*   Updated: 2025/06/24 08:48:07 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ class	Fixed
 		Fixed	&operator++();
 		Fixed	operator--(int);
 		Fixed	&operator--();
-		
 
 		float				toFloat(void) const;
 		int					toInt(void) const;
