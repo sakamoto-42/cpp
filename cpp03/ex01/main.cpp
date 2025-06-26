@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 09:01:11 by julien            #+#    #+#             */
-/*   Updated: 2025/06/25 16:32:32 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/26 15:11:14 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int main(void)
     std::cout << std::endl;
     SC4V_TP.guardGate();
     std::cout << std::endl;
+
     std::cout << "--- Test ScavTrap energy points depletion ---" << std::endl;
     unsigned int i = SC4V_TP.getEnergyPoints();
     while (i > 0)
