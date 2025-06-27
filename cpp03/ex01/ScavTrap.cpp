@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 14:46:58 by julien            #+#    #+#             */
-/*   Updated: 2025/06/25 15:38:29 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 19:14:30 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,16 @@ void    ScavTrap::attack(const std::string& target)
 
 void    ScavTrap::guardGate(void)
 {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "ScavTrap " << this->_name << " can't guard gate because it has no more hit points left !" << std::endl;
+        return ;
+    }
+    if (this->_energy_points <= 0)
+    {
+        std::cout << "ScavTrap " << this->_name << " can't guard gate because it has no more energy points left !" << std::endl;
+        return ;
+    }
     std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
     this->_energy_points --;
     std::cout << "ScavTrap " << this->_name << " have now " << this->_energy_points << " energy points remaining" << std::endl;

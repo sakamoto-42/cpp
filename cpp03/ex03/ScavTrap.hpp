@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 14:41:42 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 08:40:29 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 18:11:46 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ class   ScavTrap : virtual public ClapTrap
 
         void            attack(const std::string& target);
         void            guardGate(void);
+
+    protected:
+        unsigned int    _hit_points;
+        unsigned int    _energy_points;
+        unsigned int    _attack_damage;
 };
 
 std::ostream    &operator<<(std::ostream &o, ScavTrap const &scav_trap);

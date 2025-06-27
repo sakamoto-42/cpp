@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 09:01:11 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 11:34:22 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 19:15:27 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int main(void)
     std::cout << std::endl;
     SC4V_TP.beRepaired(10);
     std::cout << std::endl;
+    SC4V_TP.guardGate();
+    std::cout << std::endl;
 
     std::cout << "--- Test hit points depletion ---" << std::endl;
     SC4V_TP.takeDamage(SC4V_TP.getHitPoints());
@@ -68,6 +70,8 @@ int main(void)
     SC4V_TP.attack("a ClapTrap");
     std::cout << std::endl;
     SC4V_TP.beRepaired(10);
+    std::cout << std::endl;
+    SC4V_TP.guardGate();
     std::cout << std::endl;
     SC4V_TP.takeDamage(5);
     std::cout << std::endl;

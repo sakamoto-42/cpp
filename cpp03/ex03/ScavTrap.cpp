@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 14:46:58 by julien            #+#    #+#             */
-/*   Updated: 2025/06/25 15:38:29 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 20:21:34 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap()
+ScavTrap::ScavTrap(void) : ClapTrap("Default ScavTrap")
 {
-    this->_name = "Default ScavTrap";
     this->_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
@@ -47,6 +46,9 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src)
 {
     std::cout << "ScavTrap copy constructor called to copy " << src.getName() << std::endl;
+    this->_hit_points = src._hit_points;
+	this->_energy_points = src._energy_points;
+	this->_attack_damage = src._attack_damage;
     return ;
 }
 
@@ -62,33 +64,46 @@ ScavTrap    &ScavTrap::operator=(ScavTrap const &rhs)
     if (this != &rhs)
     {
         ClapTrap::operator=(rhs);
+        this->_hit_points = rhs._hit_points;
+		this->_energy_points = rhs._energy_points;
+		this->_attack_damage = rhs._attack_damage;
     }
     return (*this);
 }
 
 void    ScavTrap::attack(const std::string& target)
 {
-    if (this->_hit_points <= 0)
+    if (this->ClapTrap::_hit_points <= 0)
     {
-        std::cout << "ScavTrap " << this->_name << " can't attack because it has no more hit points left !" << std::endl;
+        std::cout << "ScavTrap " << this->ClapTrap::_name << " can't attack because it has no more hit points left !" << std::endl;
         return ;
     }
-    if (this->_energy_points <= 0)
+    if (this->ClapTrap::_energy_points <= 0)
     {
-        std::cout << "ScavTrap " << this->_name << " can't attack because it has no more energy points left !" << std::endl;
+        std::cout << "ScavTrap " << this->ClapTrap::_name << " can't attack because it has no more energy points left !" << std::endl;
         return ;
     }
-    std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
-    this->_energy_points--;
-    std::cout << "ScavTrap " << this->_name << " have now " << this->_energy_points << " energy points remaining" << std::endl;
+    std::cout << "ScavTrap " << this->ClapTrap::_name << " attacks " << target << ", causing " << this->ClapTrap::_attack_damage << " points of damage!" << std::endl;
+    this->ClapTrap::_energy_points--;
+    std::cout << "ScavTrap " << this->ClapTrap::_name << " have now " << this->ClapTrap::_energy_points << " energy points remaining" << std::endl;
     return ;
 }
 
 void    ScavTrap::guardGate(void)
 {
-    std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
-    this->_energy_points --;
-    std::cout << "ScavTrap " << this->_name << " have now " << this->_energy_points << " energy points remaining" << std::endl;
+    if (this->ClapTrap::_hit_points <= 0)
+    {
+        std::cout << "ScavTrap " << this->ClapTrap::_name << " can't guard gate because it has no more hit points left !" << std::endl;
+        return ;
+    }
+    if (this->ClapTrap::_energy_points <= 0)
+    {
+        std::cout << "ScavTrap " << this->ClapTrap::_name << " can't guard gate because it has no more energy points left !" << std::endl;
+        return ;
+    }
+    std::cout << "ScavTrap " << this->ClapTrap::_name << " is now in Gate keeper mode" << std::endl;
+    this->ClapTrap::_energy_points--;
+    std::cout << "ScavTrap " << this->ClapTrap::_name << " have now " << this->ClapTrap::_energy_points << " energy points remaining" << std::endl;
     return ;
 }
 

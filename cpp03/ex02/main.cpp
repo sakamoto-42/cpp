@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 09:01:11 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 11:33:48 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 19:15:56 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ int main(void)
     std::cout << std::endl;
     FR4G_TP.beRepaired(10);
     std::cout << std::endl;
+    FR4G_TP.highFivesGuys();
+    std::cout << std::endl;
 
     std::cout << "--- Test hit points depletion ---" << std::endl;
     FR4G_TP.takeDamage(FR4G_TP.getHitPoints());
@@ -78,6 +80,8 @@ int main(void)
     FR4G_TP.attack("a ClapTrap");
     std::cout << std::endl;
     FR4G_TP.beRepaired(10);
+    std::cout << std::endl;
+    FR4G_TP.highFivesGuys();
     std::cout << std::endl;
     FR4G_TP.takeDamage(5);
     std::cout << std::endl;

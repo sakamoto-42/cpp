@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:58:15 by julien            #+#    #+#             */
-/*   Updated: 2025/06/26 15:41:54 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 20:14:27 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,18 @@ void    FragTrap::attack(const std::string& target)
 
 void    FragTrap::highFivesGuys(void)
 {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "FragTrap " << this->_name << " can't high five because it has no more hit points left !" << std::endl;
+        return ;
+    }
+    if (this->_energy_points <= 0)
+    {
+        std::cout << "FragTrap " << this->_name << " can't high five because it has no more energy points left !" << std::endl;
+        return ;
+    }
     std::cout << "FragTrap " << this->_name << " says : \"Secret handshake !\"" << std::endl;
-    this->_energy_points --;
+    this->_energy_points--;
     std::cout << "FragTrap " << this->_name << " have now " << this->_energy_points << " energy points remaining" << std::endl;
     return ;
 }

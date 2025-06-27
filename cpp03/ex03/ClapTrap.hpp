@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:09:59 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 09:53:04 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 18:02:09 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ class   ClapTrap
         void                beRepaired(unsigned int amount);
     
         const std::string   &getName(void) const;
-        unsigned int  getHitPoints(void) const;
-        unsigned int  getEnergyPoints(void) const;
-        unsigned int  getAttackDamage(void) const;
+        unsigned int        getHitPoints(void) const;
+        unsigned int        getEnergyPoints(void) const;
+        unsigned int        getAttackDamage(void) const;
 
     protected:
         std::string     _name;

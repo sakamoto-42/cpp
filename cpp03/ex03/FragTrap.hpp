@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:58:27 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 08:49:52 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 18:12:56 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ class   FragTrap : virtual public ClapTrap
 
         void        attack(const std::string& target);
         void        highFivesGuys(void);
+
+    protected:
+        unsigned int    _hit_points;
+        unsigned int    _energy_points;
+        unsigned int    _attack_damage;
 };
 
 std::ostream    &operator<<(std::ostream &o, FragTrap const &frag_trap);
