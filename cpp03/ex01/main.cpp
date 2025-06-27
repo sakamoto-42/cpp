@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 09:01:11 by julien            #+#    #+#             */
-/*   Updated: 2025/06/26 15:11:14 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 11:34:22 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,14 @@ int main(void)
     ScavTrap    SC4V_TP_clone(SC4V_TP);
 
     std::cout << std::endl;
+    default_scav_trap = SC4V_TP;
+    std::cout << std::endl;
+
     std::cout << CL4P_TP << std::endl;
+
+    std::cout << default_scav_trap << std::endl;
     std::cout << SC4V_TP << std::endl;
+    std::cout << SC4V_TP_clone << std::endl;
 
     std::cout << "--- Test ClapTrap and ScavTrap attack() and takeDamage() ---" << std::endl;
     CL4P_TP.attack(SC4V_TP.getName());

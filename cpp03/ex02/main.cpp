@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 09:01:11 by julien            #+#    #+#             */
-/*   Updated: 2025/06/26 15:19:00 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 11:33:48 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,15 @@ int main(void)
     FragTrap    FR4G_TP_clone(FR4G_TP);
 
     std::cout << std::endl;
+    default_frag_trap = FR4G_TP;
+    std::cout << std::endl;
+
     std::cout << CL4P_TP << std::endl;
     std::cout << SC4V_TP << std::endl;
+
+    std::cout << default_frag_trap << std::endl;
     std::cout << FR4G_TP << std::endl;
+    std::cout << FR4G_TP_clone << std::endl;
 
     std::cout << "--- Test ScavTrap and FragTrap attack() and takeDamage() ---" << std::endl;
     SC4V_TP.attack(FR4G_TP.getName());

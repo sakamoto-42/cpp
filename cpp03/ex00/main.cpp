@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 09:01:11 by julien            #+#    #+#             */
-/*   Updated: 2025/06/25 16:28:30 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/27 11:34:48 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,13 @@ int main(void)
         ClapTrap    CL4P_TP("CL4P-TP");
         ClapTrap    CLP4P_TP_clone(CL4P_TP);
 
+        std::cout << std::endl;
         default_clap_trap = CL4P_TP;
+        std::cout << std::endl;
+
+        std::cout << default_clap_trap << std::endl;
         std::cout << CL4P_TP << std::endl;
+        std::cout << CLP4P_TP_clone << std::endl;
     }
     {
         std::cout << std::endl;
