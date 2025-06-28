@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 08:42:59 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 18:41:04 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 08:26:21 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ DiamondTrap::DiamondTrap(void) : ClapTrap("Default_DiamondTrap_clap_name"), Scav
     this->ClapTrap::_energy_points = this->ScavTrap::_energy_points;
     this->ClapTrap::_attack_damage = this->FragTrap::_attack_damage;
     std::cout << "DiamondTrap default constructor called to create :" << std::endl;
-    std::cout << "Name : " << this->_name << std::endl;
-    std::cout << "Hit points : " << this->ClapTrap::_hit_points << std::endl;
-    std::cout << "Energy points : " << this->ClapTrap::_energy_points << std::endl;
-    std::cout << "Attack damage : " << this->ClapTrap::_attack_damage << std::endl;
+    std::cout << "Name : " << this->getName() << std::endl;
+    std::cout << "Hit points : " << this->getHitPoints() << std::endl;
+    std::cout << "Energy points : " << this->getEnergyPoints() << std::endl;
+    std::cout << "Attack damage : " << this->getAttackDamage() << std::endl;
     std::cout << std::endl;
     return ;
 }
@@ -37,10 +37,10 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
     this->ClapTrap::_energy_points = this->ScavTrap::_energy_points;
     this->ClapTrap::_attack_damage = this->FragTrap::_attack_damage;
     std::cout << "DiamondTrap parametric constructor called to create :" << std::endl;
-    std::cout << "Name : " << this->_name << std::endl;
-    std::cout << "Hit points : " << this->ClapTrap::_hit_points << std::endl;
-    std::cout << "Energy points : " << this->ClapTrap::_energy_points << std::endl;
-    std::cout << "Attack damage : " << this->ClapTrap::_attack_damage << std::endl;
+    std::cout << "Name : " << this->getName() << std::endl;
+    std::cout << "Hit points : " << this->getHitPoints() << std::endl;
+    std::cout << "Energy points : " << this->getEnergyPoints() << std::endl;
+    std::cout << "Attack damage : " << this->getAttackDamage() << std::endl;
     std::cout << std::endl;
     return ;
 }
@@ -53,7 +53,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(src), ScavTrap(src),
 
 DiamondTrap::~DiamondTrap(void)
 {
-    std::cout << "DiamondTrap destructor called to destroy " << this->_name << std::endl;
+    std::cout << "DiamondTrap destructor called to destroy " << this->getName() << std::endl;
     return ;
 }
 
@@ -77,13 +77,28 @@ void    DiamondTrap::attack(const std::string& target)
 
 void    DiamondTrap::whoAmI(void) const
 {
-    std::cout << "My DiamondTrap name is : " << this->_name << std::endl;
-    std::cout << "My ClapTrap name is : " << ClapTrap::_name << std::endl;
+    std::cout << "My DiamondTrap name is : " << this->getName() << std::endl;
+    std::cout << "My ClapTrap name is : " << ClapTrap::getName() << std::endl;
 }
 
 const std::string &DiamondTrap::getName(void) const
 {
-    return (this->_name);    
+    return (this->_name);
+}
+
+unsigned int    DiamondTrap::getHitPoints(void) const
+{
+    return (this->ClapTrap::_hit_points);
+}
+
+unsigned int    DiamondTrap::getEnergyPoints(void) const
+{
+    return (this->ClapTrap::_energy_points);
+}
+
+unsigned int    DiamondTrap::getAttackDamage(void) const
+{
+    return (this->ClapTrap::_attack_damage);
 }
 
 std::ostream    &operator<<(std::ostream &o, DiamondTrap const &diamond_trap)

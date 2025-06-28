@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 08:24:44 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 09:44:17 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 08:15:28 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ class   DiamondTrap : public ScavTrap, public FragTrap
         void                whoAmI(void) const;
 
         const std::string   &getName(void) const;
+        unsigned int        getHitPoints(void) const;
+        unsigned int        getEnergyPoints(void) const;
+        unsigned int        getAttackDamage(void) const;
 
     private:
         std::string _name;
