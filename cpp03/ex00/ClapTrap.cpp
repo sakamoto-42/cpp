@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:10:03 by julien            #+#    #+#             */
-/*   Updated: 2025/06/28 09:31:29 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:21:56 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("Default ClapTrap"), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(void) : _name("Default ClapTrap"), _hit_points(10), _max_hit_points(10), _energy_points(10), _attack_damage(0)
 {
     std::cout << "ClapTrap default constructor called to create :" << std::endl;
     std::cout << "Name : " << this->getName() << std::endl;
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(void) : _name("Default ClapTrap"), _hit_points(10), _energy_p
     return ;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _max_hit_points(10), _energy_points(10), _attack_damage(0)
 {
     std::cout << "ClapTrap parametric constructor called to create : " << std::endl;
     std::cout << "Name : " << this->getName() << std::endl;
@@ -56,6 +56,7 @@ ClapTrap    &ClapTrap::operator=(ClapTrap const &rhs)
     {
         this->_name = rhs._name;
         this->_hit_points = rhs._hit_points;
+        this->_max_hit_points = rhs._max_hit_points;
         this->_energy_points = rhs._energy_points;
         this->_attack_damage = rhs._attack_damage;
     }
@@ -110,8 +111,13 @@ void    ClapTrap::beRepaired(unsigned int amount)
         std::cout << this->getName() << " can't be repaired because it has no more energy points left !" << std::endl;
         return ;
     }
-    std::cout << this->getName() << " regain " << amount << " hit points" << std::endl;
+    unsigned int    hit_points_before = this->getHitPoints();
     this->_hit_points += amount;
+    if (this->_hit_points > this->getMaxHitPoints())
+    {
+        this->_hit_points = this->getMaxHitPoints();
+    }
+    std::cout << this->getName() << " regain " << (this->getHitPoints() - hit_points_before) << " hit points" << std::endl;
     std::cout << this->getName() << " have now " << this->getHitPoints() << " hit points remaining" << std::endl;
     this->_energy_points--;
     std::cout << this->getName() << " have now " << this->getEnergyPoints() << " energy points remaining" << std::endl;
@@ -126,6 +132,11 @@ const std::string &ClapTrap::getName(void) const
 unsigned int    ClapTrap::getHitPoints(void) const
 {
     return (this->_hit_points);
+}
+
+unsigned int    ClapTrap::getMaxHitPoints(void) const
+{
+    return (this->_max_hit_points);
 }
 
 unsigned int    ClapTrap::getEnergyPoints(void) const

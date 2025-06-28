@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 08:42:59 by julien            #+#    #+#             */
-/*   Updated: 2025/06/28 08:26:21 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:41:14 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 DiamondTrap::DiamondTrap(void) : ClapTrap("Default_DiamondTrap_clap_name"), ScavTrap("Default ScavTrap"), FragTrap("Default FragTrap"), _name("Default DiamondTrap")
 {
     this->ClapTrap::_hit_points = this->FragTrap::_hit_points;
+    this->ClapTrap::_max_hit_points = this->FragTrap::_max_hit_points;
     this->ClapTrap::_energy_points = this->ScavTrap::_energy_points;
     this->ClapTrap::_attack_damage = this->FragTrap::_attack_damage;
     std::cout << "DiamondTrap default constructor called to create :" << std::endl;
@@ -34,6 +35,7 @@ DiamondTrap::DiamondTrap(void) : ClapTrap("Default_DiamondTrap_clap_name"), Scav
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
 {
     this->ClapTrap::_hit_points = this->FragTrap::_hit_points;
+    this->ClapTrap::_max_hit_points = this->FragTrap::_max_hit_points;
     this->ClapTrap::_energy_points = this->ScavTrap::_energy_points;
     this->ClapTrap::_attack_damage = this->FragTrap::_attack_damage;
     std::cout << "DiamondTrap parametric constructor called to create :" << std::endl;
@@ -89,6 +91,11 @@ const std::string &DiamondTrap::getName(void) const
 unsigned int    DiamondTrap::getHitPoints(void) const
 {
     return (this->ClapTrap::_hit_points);
+}
+
+unsigned int    DiamondTrap::getMaxHitPoints(void) const
+{
+    return (this->ClapTrap::_max_hit_points);
 }
 
 unsigned int    DiamondTrap::getEnergyPoints(void) const

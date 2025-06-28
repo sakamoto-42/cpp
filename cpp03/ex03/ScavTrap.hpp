@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 14:41:42 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 18:11:46 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:31:35 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class   ScavTrap : virtual public ClapTrap
 
     protected:
         unsigned int    _hit_points;
+        unsigned int    _max_hit_points;
         unsigned int    _energy_points;
         unsigned int    _attack_damage;
 };

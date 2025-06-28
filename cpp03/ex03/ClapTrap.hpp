@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:09:59 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 18:02:09 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:20:51 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ class   ClapTrap
     
         const std::string   &getName(void) const;
         unsigned int        getHitPoints(void) const;
+        unsigned int        getMaxHitPoints(void) const;
         unsigned int        getEnergyPoints(void) const;
         unsigned int        getAttackDamage(void) const;
 
     protected:
         std::string     _name;
         unsigned int    _hit_points;
+        unsigned int    _max_hit_points;
         unsigned int    _energy_points;
         unsigned int    _attack_damage;
 };

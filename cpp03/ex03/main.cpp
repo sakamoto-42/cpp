@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 09:01:11 by julien            #+#    #+#             */
-/*   Updated: 2025/06/28 08:37:03 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:46:00 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ int main(void)
         std::cout << "--- Test beRepaired(), guardGate(), highFivesGuys() and whoAmI()---" << std::endl;
         DI4MD_TP.beRepaired(10);
         std::cout << std::endl;
-        DI4MD_TP.beRepaired(10);
+        DI4MD_TP.beRepaired(100);
         std::cout << std::endl;
         DI4MD_TP.guardGate();
         std::cout << std::endl;

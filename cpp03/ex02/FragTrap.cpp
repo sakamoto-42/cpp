@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:58:15 by julien            #+#    #+#             */
-/*   Updated: 2025/06/28 09:19:51 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:19:13 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 FragTrap::FragTrap(void) : ClapTrap("Default FragTrap")
 {
     this->_hit_points = 100;
+    this->_max_hit_points = 100;
     this->_energy_points = 100;
     this->_attack_damage = 30;
     std::cout << "FragTrap default constructor called to create :" << std::endl;
@@ -32,6 +33,7 @@ FragTrap::FragTrap(void) : ClapTrap("Default FragTrap")
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     this->_hit_points = 100;
+    this->_max_hit_points = 100;
     this->_energy_points = 100;
     this->_attack_damage = 30;
     std::cout << "FragTrap parametric constructor called to create : " << std::endl;
@@ -67,12 +69,12 @@ FragTrap    &FragTrap::operator=(FragTrap const &rhs)
 
 void    FragTrap::attack(const std::string& target)
 {
-    if (this->getHitPoints() <= 0)
+    if (this->getHitPoints() == 0)
     {
         std::cout << "FragTrap " << this->getName() << " can't attack because it has no more hit points left !" << std::endl;
         return ;
     }
-    if (this->getEnergyPoints() <= 0)
+    if (this->getEnergyPoints() == 0)
     {
         std::cout << "FragTrap " << this->getName() << " can't attack because it has no more energy points left !" << std::endl;
         return ;
@@ -85,12 +87,12 @@ void    FragTrap::attack(const std::string& target)
 
 void    FragTrap::highFivesGuys(void)
 {
-    if (this->getHitPoints() <= 0)
+    if (this->getHitPoints() == 0)
     {
         std::cout << "FragTrap " << this->getName() << " can't high five because it has no more hit points left !" << std::endl;
         return ;
     }
-    if (this->getEnergyPoints() <= 0)
+    if (this->getEnergyPoints() == 0)
     {
         std::cout << "FragTrap " << this->getName() << " can't high five because it has no more energy points left !" << std::endl;
         return ;

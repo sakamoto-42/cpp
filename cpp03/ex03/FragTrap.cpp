@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:58:15 by julien            #+#    #+#             */
-/*   Updated: 2025/06/28 09:10:26 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:43:32 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 FragTrap::FragTrap(void) : ClapTrap("Default FragTrap")
 {
     this->_hit_points = 100;
+    this->_max_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
-    this->ClapTrap::_hit_points = this->getHitPoints();
-    this->ClapTrap::_energy_points = this->getEnergyPoints();
-    this->ClapTrap::_attack_damage = this->getAttackDamage();
+    this->ClapTrap::_hit_points = this->_hit_points;
+    this->ClapTrap::_max_hit_points = this->_max_hit_points;
+    this->ClapTrap::_energy_points = this->_energy_points;
+    this->ClapTrap::_attack_damage = this->_attack_damage;
     std::cout << "FragTrap default constructor called to create :" << std::endl;
     std::cout << "Name : " << this->getName() << std::endl;
     std::cout << "Hit points : " << this->getHitPoints() << std::endl;
@@ -35,11 +37,13 @@ FragTrap::FragTrap(void) : ClapTrap("Default FragTrap")
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     this->_hit_points = 100;
+    this->_max_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
-    this->ClapTrap::_hit_points = this->getHitPoints();
-    this->ClapTrap::_energy_points = this->getEnergyPoints();
-    this->ClapTrap::_attack_damage = this->getAttackDamage();
+    this->ClapTrap::_hit_points = this->_hit_points;
+    this->ClapTrap::_max_hit_points = this->_max_hit_points;
+    this->ClapTrap::_energy_points = this->_energy_points;
+    this->ClapTrap::_attack_damage = this->_attack_damage;
     std::cout << "FragTrap parametric constructor called to create : " << std::endl;
     std::cout << "Name : " << this->getName() << std::endl;
     std::cout << "Hit points : " << this->getHitPoints() << std::endl;
@@ -68,6 +72,7 @@ FragTrap    &FragTrap::operator=(FragTrap const &rhs)
     {
         ClapTrap::operator=(rhs);
         this->_hit_points = rhs._hit_points;
+        this->_max_hit_points = rhs._max_hit_points;
 		this->_energy_points = rhs._energy_points;
 		this->_attack_damage = rhs._attack_damage;
     }
@@ -76,12 +81,12 @@ FragTrap    &FragTrap::operator=(FragTrap const &rhs)
 
 void    FragTrap::attack(const std::string& target)
 {
-    if (this->getHitPoints() <= 0)
+    if (this->getHitPoints() == 0)
     {
         std::cout << "FragTrap " << this->getName() << " can't attack because it has no more hit points left !" << std::endl;
         return ;
     }
-    if (this->getEnergyPoints() <= 0)
+    if (this->getEnergyPoints() == 0)
     {
         std::cout << "FragTrap " << this->getName() << " can't attack because it has no more energy points left !" << std::endl;
         return ;
@@ -94,12 +99,12 @@ void    FragTrap::attack(const std::string& target)
 
 void    FragTrap::highFivesGuys(void)
 {
-    if (this->getHitPoints() <= 0)
+    if (this->getHitPoints() == 0)
     {
         std::cout << "FragTrap " << this->getName() << " can't high five because it has no more hit points left !" << std::endl;
         return ;
     }
-    if (this->getEnergyPoints() <= 0)
+    if (this->getEnergyPoints() == 0)
     {
         std::cout << "FragTrap " << this->getName() << " can't high five because it has no more energy points left !" << std::endl;
         return ;

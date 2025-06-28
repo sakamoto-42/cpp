@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 14:46:58 by julien            #+#    #+#             */
-/*   Updated: 2025/06/28 09:23:53 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:19:32 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ScavTrap::ScavTrap(void) : ClapTrap("Default ScavTrap")
 {
     this->_hit_points = 100;
+    this->_max_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
     std::cout << "ScavTrap default constructor called to create :" << std::endl;
@@ -32,6 +33,7 @@ ScavTrap::ScavTrap(void) : ClapTrap("Default ScavTrap")
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
     this->_hit_points = 100;
+    this->_max_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
     std::cout << "ScavTrap parametric constructor called to create : " << std::endl;
@@ -67,12 +69,12 @@ ScavTrap    &ScavTrap::operator=(ScavTrap const &rhs)
 
 void    ScavTrap::attack(const std::string& target)
 {
-    if (this->getHitPoints() <= 0)
+    if (this->getHitPoints() == 0)
     {
         std::cout << "ScavTrap " << this->getName() << " can't attack because it has no more hit points left !" << std::endl;
         return ;
     }
-    if (this->getEnergyPoints() <= 0)
+    if (this->getEnergyPoints() == 0)
     {
         std::cout << "ScavTrap " << this->getName() << " can't attack because it has no more energy points left !" << std::endl;
         return ;
@@ -85,12 +87,12 @@ void    ScavTrap::attack(const std::string& target)
 
 void    ScavTrap::guardGate(void)
 {
-    if (this->getHitPoints() <= 0)
+    if (this->getHitPoints() == 0)
     {
         std::cout << "ScavTrap " << this->getName() << " can't guard gate because it has no more hit points left !" << std::endl;
         return ;
     }
-    if (this->getEnergyPoints() <= 0)
+    if (this->getEnergyPoints() == 0)
     {
         std::cout << "ScavTrap " << this->getName() << " can't guard gate because it has no more energy points left !" << std::endl;
         return ;

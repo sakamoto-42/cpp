@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 09:01:11 by julien            #+#    #+#             */
-/*   Updated: 2025/06/27 19:15:27 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/28 14:17:00 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void)
     std::cout << "--- Test ClapTrap and ScavTrap attack() and takeDamage() ---" << std::endl;
     CL4P_TP.attack(SC4V_TP.getName());
     std::cout << std::endl;
-    SC4V_TP.takeDamage(CL4P_TP.getAttackDamage());
+    SC4V_TP.takeDamage(SC4V_TP_clone.getAttackDamage());
     std::cout << std::endl;
     SC4V_TP.attack(CL4P_TP.getName());
     std::cout << std::endl;
@@ -44,7 +44,7 @@ int main(void)
     std::cout << std::endl;
 
     std::cout << "--- Test ScavTrap beRepaired() and guardGate() ---" << std::endl;
-    SC4V_TP.beRepaired(10);
+    SC4V_TP.beRepaired(50);
     std::cout << std::endl;
     SC4V_TP.guardGate();
     std::cout << std::endl;
