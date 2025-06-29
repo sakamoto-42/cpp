@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:12:20 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 16:34:04 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/29 17:38:50 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,59 @@
 int main(void)
 {
     {
-        std::cout << "---------------------- SUBJECT TESTS BEGIN ---------------------" << std::endl;
+        std::cout << "------------------------- SUBJECT TESTS ------------------------" << std::endl;
+        std::cout << "-------------------- WITH ANIMAL, CAT AND DOG ------------------" << std::endl;
+        std::cout << "----------------------------- BEGIN ----------------------------" << std::endl;
         const   Animal  *meta = new Animal();
-        const   Animal  *j = new Dog();
+        std::cout << std::endl;
         const   Animal  *i = new Cat();
+        std::cout << std::endl;
+        const   Animal  *j = new Dog();
+        std::cout << std::endl;
         
-        std::cout << j->getType() << " " << std::endl;
+        std::cout << meta->getType() << " " << std::endl;
+        std::cout << std::endl;
         std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); //will output the cat sound!
-        j->makeSound();
+        std::cout << std::endl;
+        std::cout << j->getType() << " " << std::endl;
+        std::cout << std::endl;
         meta->makeSound();
-        std::cout << "---------------------- SUBJECT TESTS END -----------------------" << std::endl;
+        std::cout << std::endl;
+        i->makeSound(); //will output the cat sound!
+        std::cout << std::endl;
+        j->makeSound();
+        std::cout << std::endl;
+        std::cout << "------------------------- SUBJECT TESTS ------------------------" << std::endl;
+        std::cout << "-------------------- WITH ANIMAL, CAT AND DOG ------------------" << std::endl;
+        std::cout << "------------------------------ END -----------------------------" << std::endl;
+        std::cout << std::endl;
+    }
+    {
+        std::cout << "------------------------- SUBJECT TESTS ------------------------" << std::endl;
+        std::cout << "------------- WITH WRONG ANIMAL, WRONG CAT AND DOG -------------" << std::endl;
+        std::cout << "----------------------------- BEGIN ----------------------------" << std::endl;
+        const   WrongAnimal  *meta = new WrongAnimal();
+        std::cout << std::endl;
+        const   WrongAnimal  *i = new WrongCat();
+        std::cout << std::endl;
+        const   Animal  *j = new Dog();
+        std::cout << std::endl;
+        
+        std::cout << meta->getType() << " " << std::endl;
+        std::cout << std::endl;
+        std::cout << i->getType() << " " << std::endl;
+        std::cout << std::endl;
+        std::cout << j->getType() << " " << std::endl;
+        std::cout << std::endl;
+        meta->makeSound();
+        std::cout << std::endl;
+        i->makeSound(); //will output the wrong animal sound!
+        std::cout << std::endl;
+        j->makeSound();
+        std::cout << std::endl;
+        std::cout << "------------------------- SUBJECT TESTS ------------------------" << std::endl;
+        std::cout << "------------- WITH WRONG ANIMAL, WRONG CAT AND DONE -------------" << std::endl;
+        std::cout << "------------------------------ END -----------------------------" << std::endl;
         std::cout << std::endl;
     }
     {

@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:50:44 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 16:12:00 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/29 17:18:11 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Cat  &Cat::operator=(Cat const &rhs)
     std::cout << "Type : " << this->getType() << std::endl;
     if (this != &rhs)
     {
-        Cat::operator=(rhs);
+        Animal::operator=(rhs);
     }
     return (*this);
 }

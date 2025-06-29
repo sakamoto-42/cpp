@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:51:24 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 16:12:11 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/29 17:18:19 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Dog  &Dog::operator=(Dog const &rhs)
     std::cout << "Type : " << this->getType() << std::endl;
     if (this != &rhs)
     {
-        Dog::operator=(rhs);
+        Animal::operator=(rhs);
     }
     return (*this);
 }

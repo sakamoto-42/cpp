@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:50:12 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 09:50:20 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/29 17:13:05 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define WRONGCAT_HPP
 
 # include <iostream>
+# include "WrongAnimal.hpp"
 
-class WrongCat
+class WrongCat : public WrongAnimal
 {
     public:
         WrongCat(void);
@@ -23,6 +24,8 @@ class WrongCat
         virtual ~WrongCat(void);
 
         WrongCat &operator=(WrongCat const &rhs);
+
+        void    makeSound(void) const;
 };
 
 std::ostream    &operator<<(std::ostream &o, WrongCat const &wrong_cat);

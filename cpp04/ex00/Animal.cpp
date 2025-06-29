@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:33:10 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 16:12:44 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/29 17:11:01 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void    Animal::makeSound(void) const
 	return ;
 }
 
-const std::string &Animal::getType(void) const
+const std::string   &Animal::getType(void) const
 {
     return (this->type);
 }
