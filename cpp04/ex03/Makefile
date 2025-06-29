@@ -3,11 +3,12 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
-			ClapTrap.cpp \
-			DiamondTrap.cpp \
-			FragTrap.cpp \
+			AMateria.cpp \
+			Cure.cpp \
+			Ice.cpp \
+			ICharacter.cpp \
+			IMateriaSource.cpp \
 			main.cpp \
-			ScavTrap.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

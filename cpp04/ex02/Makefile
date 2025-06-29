@@ -3,7 +3,13 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
+			AAnimal.cpp \
+			Brain.cpp \
+			Cat.cpp \
+			Dog.cpp \
 			main.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 
