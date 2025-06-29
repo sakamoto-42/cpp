@@ -3,6 +3,9 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
+			Animal.cpp \
+			Cat.cpp \
+			Dog.cpp \
 			main.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
