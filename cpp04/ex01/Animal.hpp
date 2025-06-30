@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/29 09:54:49 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 14:20:01 by julien           ###   ########.fr       */
+/*   Created: 2025/06/28 17:28:05 by julien            #+#    #+#             */
+/*   Updated: 2025/06/30 09:39:52 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
 # include <string>
 
-class   Brain
+class   Animal
 {
     public:
-        Brain(void);
-        Brain(Brain const &src);
-        virtual ~Brain(void);
+        Animal(void);
+        Animal(Animal const &src);
+        virtual ~Animal(void);
 
-        Brain  &operator=(Brain const &rhs);
+        Animal              &operator=(Animal const &rhs);
 
-    private:
-        std::string ideas[100];
+        virtual void        makeSound(void) const;
+
+        const std::string   &getType(void) const;
+
+    protected:
+        std::string type;
 };
 
-//std::ostream    &operator<<(std::ostream &o, Brain const &brain);
+std::ostream    &operator<<(std::ostream &o, Animal const &animal);
 
 #endif

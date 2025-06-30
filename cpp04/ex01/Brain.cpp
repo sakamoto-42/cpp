@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:56:29 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 10:31:29 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 14:19:52 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ Brain  &Brain::operator=(Brain const &rhs)
     return (*this);
 }
 
+/*
 std::ostream    &operator<<(std::ostream &o, Brain const &brain)
 {
     o << "Brain" << std::endl;
     return (o);
 }
+*/
