@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:56:29 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 17:54:30 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 20:49:32 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ Brain  &Brain::operator=(Brain const &rhs)
     std::cout << "Brain copy assignment operator called" << std::endl;
     if (this != &rhs)
     {
-        
+        this->_ideas_next_index = rhs._ideas_next_index;
+        int i = 0;
+        while (i < this->_ideas_next_index)
+        {
+            this->_ideas[i] = rhs._ideas[i];
+            i++;
+        }
     }
     return (*this);
 }

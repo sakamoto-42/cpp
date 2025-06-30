@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:50:44 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 17:53:54 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 20:49:11 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat(void) : Animal()
     return ;
 }
 
-Cat::Cat(Cat const &src) : Animal(src)
+Cat::Cat(Cat const &src) : Animal(src), _brain(new Brain(*(src._brain)))
 {
     this->type = "Cat";
     std::cout << "Cat copy constructor called with :" << std::endl;
@@ -46,6 +46,8 @@ Cat  &Cat::operator=(Cat const &rhs)
     if (this != &rhs)
     {
         Animal::operator=(rhs);
+        delete (this->_brain);
+        this->_brain = new Brain(*(rhs._brain));
     }
     return (*this);
 }

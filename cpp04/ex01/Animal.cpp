@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:33:10 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 17:24:40 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 18:08:12 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Animal::Animal(void) : type("Animal")
     return ;
 }
 
-Animal::Animal(Animal const &src) : type("Animal")
+Animal::Animal(Animal const &src)
 {
     std::cout << "Animal copy constructor called with :" << std::endl;
     std::cout << "Type : " << this->getType() << std::endl;
