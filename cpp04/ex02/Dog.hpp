@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/28 17:28:05 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 23:38:16 by julien           ###   ########.fr       */
+/*   Created: 2025/06/29 09:46:23 by julien            #+#    #+#             */
+/*   Updated: 2025/06/30 23:26:00 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include <iostream>
-# include <string>
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class   Animal
+class Dog : public AAnimal
 {
     public:
-        Animal(void);
-        Animal(Animal const &src);
-        virtual ~Animal(void);
+        Dog(void);
+        Dog(Dog const &src);
+        virtual ~Dog(void);
 
-        Animal                      &operator=(Animal const &rhs);
+        Dog             &operator=(Dog const &rhs);
 
         virtual void                makeSound(void) const;
         virtual void                learn(const std::string &idea);
         virtual const std::string   recall(int idea_index) const;
 
-        const std::string           &getType(void) const;
-
-    protected:
-        std::string type;
+    private:
+        Brain   *_brain;
 };
 
-std::ostream    &operator<<(std::ostream &o, Animal const &animal);
+std::ostream    &operator<<(std::ostream &o, Dog const &dog);
 
 #endif

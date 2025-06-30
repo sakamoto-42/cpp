@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:33:10 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 18:08:12 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 23:42:43 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,18 @@ void    Animal::makeSound(void) const
 {
     std::cout << "\"My sound is not defined !\"" << std::endl;
 	return ;
+}
+
+void    Animal::learn(const std::string &idea)
+{
+    (void)idea;
+    std::cout << "The Animal class don't have a Brain, so can't learn an idea !" << std::endl;
+}
+
+const std::string   Animal::recall(int idea_index) const
+{
+    (void)idea_index;
+    return ("The Animal class don't have a Brain, so can't recall an idea !");
 }
 
 const std::string   &Animal::getType(void) const

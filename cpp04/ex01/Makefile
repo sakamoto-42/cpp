@@ -8,6 +8,8 @@ SRCS_FILES = \
 			Cat.cpp \
 			Dog.cpp \
 			main.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

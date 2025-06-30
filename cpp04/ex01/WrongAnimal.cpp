@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                        :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/29 10:32:35 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 23:33:37 by julien           ###   ########.fr       */
+/*   Created: 2025/06/29 09:52:13 by julien            #+#    #+#             */
+/*   Updated: 2025/06/29 17:29:25 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-#include "AAnimal.hpp"
+#include "WrongAnimal.hpp"
 
-AAnimal::AAnimal(void) : type("AAnimal")
+WrongAnimal::WrongAnimal(void) : type("WrongAnimal")
 {
-    std::cout << "AAnimal default constructor called with :" << std::endl;
+    std::cout << "WrongAnimal default constructor called with :" << std::endl;
     std::cout << "Type : " << this->getType() << std::endl;
     return ;
 }
 
-AAnimal::AAnimal(AAnimal const &src)
+WrongAnimal::WrongAnimal(WrongAnimal const &src) : type("WrongAnimal")
 {
-    std::cout << "AAnimal copy constructor called with :" << std::endl;
+    std::cout << "WrongAnimal copy constructor called with :" << std::endl;
     std::cout << "Type : " << this->getType() << std::endl;
     *this = src;
     return ;
 }
 
-AAnimal::~AAnimal(void)
+WrongAnimal::~WrongAnimal(void)
 {
-    std::cout << "AAnimal destructor called with :" << std::endl;
+    std::cout << "WrongAnimal destructor called with :" << std::endl;
     std::cout << "Type : " << this->getType() << std::endl;
     return ;
 }
 
-AAnimal  &AAnimal::operator=(AAnimal const &rhs)
+WrongAnimal  &WrongAnimal::operator=(WrongAnimal const &rhs)
 {
-    std::cout << "AAnimal copy assignment operator called with :" << std::endl;
+    std::cout << "WrongAnimal copy assignment operator called with :" << std::endl;
     std::cout << "Type : " << this->getType() << std::endl;
     if (this != &rhs)
     {
@@ -47,13 +47,19 @@ AAnimal  &AAnimal::operator=(AAnimal const &rhs)
     return (*this);
 }
 
-const std::string   &AAnimal::getType(void) const
+void    WrongAnimal::makeSound(void) const
+{
+    std::cout << "\"My sound is not defined (Wrong Animal) !\"" << std::endl;
+	return ;
+}
+
+const std::string   &WrongAnimal::getType(void) const
 {
     return (this->type);
 }
 
-std::ostream    &operator<<(std::ostream &o, AAnimal const &a_animal)
+std::ostream    &operator<<(std::ostream &o, WrongAnimal const &wrong_animal)
 {
-    o << "My type is : " << a_animal.getType() << std::endl;
+    o << "My type is : " << wrong_animal.getType() << std::endl;
     return (o);
 }
