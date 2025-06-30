@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:50:44 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 14:16:05 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 17:53:54 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ void    Cat::makeSound(void) const
 {
     std::cout << "\"Meow !\"" << std::endl;
 	return ;
+}
+
+void    Cat::learn(const std::string &idea)
+{
+    this->_brain->addIdea(idea);
+    return ;
+}
+
+const std::string   Cat::recall(int idea_index) const
+{
+    return (this->_brain->getIdea(idea_index));
 }
 
 std::ostream    &operator<<(std::ostream &o, Cat const &cat)

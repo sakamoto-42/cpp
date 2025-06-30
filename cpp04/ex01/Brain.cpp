@@ -6,14 +6,14 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:56:29 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 14:19:52 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 17:54:30 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Brain.hpp"
 
-Brain::Brain(void)
+Brain::Brain(void) : _ideas_next_index(0)
 {
     std::cout << "Brain default constructor called" << std::endl;
     return ;
@@ -40,6 +40,22 @@ Brain  &Brain::operator=(Brain const &rhs)
         
     }
     return (*this);
+}
+
+void    Brain::addIdea(const std::string &idea)
+{
+    if (this->_ideas_next_index >= 100)
+        return ;
+    this->_ideas[this->_ideas_next_index] = idea;
+    this->_ideas_next_index++;
+}
+
+const std::string   Brain::getIdea(int idea_index) const
+{
+    if (idea_index >= 0 && idea_index < _ideas_next_index) {
+        return (_ideas[idea_index]);
+    }
+    return ("");
 }
 
 /*

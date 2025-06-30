@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:51:24 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 14:25:28 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 17:55:59 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ void    Dog::makeSound(void) const
 {
     std::cout << "\"Waf !\"" << std::endl;
 	return ;
+}
+
+void    Dog::learn(const std::string &idea)
+{
+    this->_brain->addIdea(idea);
+    return ;
+}
+
+const std::string   Dog::recall(int idea_index) const
+{
+    return (this->_brain->getIdea(idea_index));
 }
 
 std::ostream    &operator<<(std::ostream &o, Dog const &dog)

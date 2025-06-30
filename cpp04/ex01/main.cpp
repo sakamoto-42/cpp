@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:12:20 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 14:50:03 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 17:41:40 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,27 @@ int main(void)
     {
         std::cout << "------------------------- SUBJECT TESTS ------------------------" << std::endl;
         std::cout << "----------------------------- BEGIN ----------------------------" << std::endl;
-        const   Animal  *meta = new Animal();
-        std::cout << std::endl;
+        //const   Animal  *meta = new Animal();
+        //std::cout << std::endl;
         const   Animal  *i = new Cat();
         std::cout << std::endl;
         const   Animal  *j = new Dog();
         std::cout << std::endl;
-        
-        std::cout << meta->getType() << " " << std::endl;
-        std::cout << std::endl;
+
+        //std::cout << meta->getType() << " " << std::endl;
+        //std::cout << std::endl;
         std::cout << i->getType() << " " << std::endl;
         std::cout << std::endl;
         std::cout << j->getType() << " " << std::endl;
         std::cout << std::endl;
-        meta->makeSound();
-        std::cout << std::endl;
+        //meta->makeSound();
+        //std::cout << std::endl;
         i->makeSound(); //will output the cat sound!
         std::cout << std::endl;
         j->makeSound();
         std::cout << std::endl;
 
-        delete(meta);
+        //delete(meta);
         delete(i);
         delete(j);//should not  create a leak
         std::cout << "------------------------- SUBJECT TESTS ------------------------" << std::endl;
@@ -63,6 +63,9 @@ int main(void)
             array_of_animals[i] = new Cat();
             i++;
         }
+
+        array_of_animals[0]->learn("idea");
+        
         i = 0;
         while (i < array_of_animals_size)
         {
