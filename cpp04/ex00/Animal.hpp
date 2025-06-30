@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:28:05 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 16:59:57 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 08:59:09 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   Animal
         Animal(Animal const &src);
         virtual ~Animal(void);
 
-        Animal  &operator=(Animal const &rhs);
+        Animal              &operator=(Animal const &rhs);
 
         virtual void        makeSound(void) const;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 08:31:39 by juduchar          #+#    #+#             */
-/*   Updated: 2025/06/13 08:48:02 by juduchar         ###   ########.fr       */
+/*   Updated: 2025/06/30 09:23:41 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 {
 	Fixed a;
 	Fixed b(a);
-	Fixed(c);
+	Fixed c;
 
 	c = b;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juduchar <juduchar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 11:18:15 by julien            #+#    #+#             */
-/*   Updated: 2025/06/10 10:15:16 by juduchar         ###   ########.fr       */
+/*   Updated: 2025/06/30 09:31:48 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,17 @@ void Harl::complain(std::string level) const
 	switch (i) {
 		case 0:
 			(this->*_dispatch_table[0])();
+			/* fall through */
 		case 1:
 			(this->*_dispatch_table[1])();
+			/* fall through */
 		case 2:
 			(this->*_dispatch_table[2])();
+			/* fall through */
 		case 3:
 			(this->*_dispatch_table[3])();
 			break ;
-		case 4:
+		default:
 			std::cout << "Error : invalid level" << std::endl;
 			break ;
 	}

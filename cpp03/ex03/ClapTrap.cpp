@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 12:10:03 by julien            #+#    #+#             */
-/*   Updated: 2025/06/28 14:23:18 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/29 15:06:11 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,7 +151,7 @@ unsigned int    ClapTrap::getAttackDamage(void) const
 
 std::ostream    &operator<<(std::ostream &o, ClapTrap const &clap_trap)
 {
-    o << "ClapTrap : " << std::endl;
+    o << "ClapTrap :" << std::endl;
     o << "Name : " << clap_trap.getName() << std::endl;
     o << "Hit points : " << clap_trap.getHitPoints() << std::endl;
     o << "Energy points : " << clap_trap.getEnergyPoints() << std::endl;

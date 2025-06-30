@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:12:20 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 17:38:50 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 09:18:49 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ int main(void)
         std::cout << std::endl;
         j->makeSound();
         std::cout << std::endl;
+
+        delete(meta);
+        delete(i);
+        delete(j);
         std::cout << "------------------------- SUBJECT TESTS ------------------------" << std::endl;
         std::cout << "-------------------- WITH ANIMAL, CAT AND DOG ------------------" << std::endl;
         std::cout << "------------------------------ END -----------------------------" << std::endl;
@@ -70,6 +74,10 @@ int main(void)
         std::cout << std::endl;
         j->makeSound();
         std::cout << std::endl;
+
+        delete(meta);
+        delete(i);
+        delete(j);
         std::cout << "------------------------- SUBJECT TESTS ------------------------" << std::endl;
         std::cout << "------------- WITH WRONG ANIMAL, WRONG CAT AND DONE -------------" << std::endl;
         std::cout << "------------------------------ END -----------------------------" << std::endl;

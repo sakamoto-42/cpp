@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:46:23 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 15:43:15 by julien           ###   ########.fr       */
+/*   Updated: 2025/06/30 08:59:20 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Dog : public Animal
         Dog(Dog const &src);
         virtual ~Dog(void);
 
-        Dog &operator=(Dog const &rhs);
+        Dog             &operator=(Dog const &rhs);
 
-        void    makeSound(void) const;
+        virtual void    makeSound(void) const;
 };
 
 std::ostream    &operator<<(std::ostream &o, Dog const &dog);
