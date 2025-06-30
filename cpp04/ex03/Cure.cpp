@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:28 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 10:34:38 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/01 01:03:06 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Cure  &Cure::operator=(Cure const &rhs)
 
 std::ostream    &operator<<(std::ostream &o, Cure const &cure)
 {
+    (void)cure;
     o << "Cure" << std::endl;
     return (o);
 }

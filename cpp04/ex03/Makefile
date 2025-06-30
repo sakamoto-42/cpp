@@ -4,11 +4,13 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
 			AMateria.cpp \
+			Character.cpp \
 			Cure.cpp \
 			Ice.cpp \
 			ICharacter.cpp \
 			IMateriaSource.cpp \
 			main.cpp \
+			MateriaSource.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

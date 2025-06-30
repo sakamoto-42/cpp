@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:35 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 10:34:53 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/01 01:03:28 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Ice  &Ice::operator=(Ice const &rhs)
 
 std::ostream    &operator<<(std::ostream &o, Ice const &ice)
 {
+    (void)ice;
     o << "Ice" << std::endl;
     return (o);
 }

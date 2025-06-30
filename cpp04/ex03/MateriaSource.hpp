@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/29 10:11:45 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 00:33:10 by julien           ###   ########.fr       */
+/*   Created: 2025/07/01 01:03:51 by julien            #+#    #+#             */
+/*   Updated: 2025/07/01 01:08:03 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
 
-class   IMateriaSource
+class   MateriaSource
 {
     public:
-        virtual             ~IMateriaSource() {}
-        virtual void        learnMateria(AMateria *) = 0;
-        virtual AMateria    *createMateria(std::string const &type) = 0;
+        MateriaSource(void);
+        MateriaSource(MateriaSource const &src);
+        virtual             ~MateriaSource(void);
+
+        MateriaSource       &operator=(MateriaSource const &rhs);
+
+        virtual void        learnMateria(AMateria *);
+        virtual AMateria    *createMateria(std::string const &type);
 };
+
+std::ostream    &operator<<(std::ostream &o, MateriaSource const &materia_source);
 
 #endif
