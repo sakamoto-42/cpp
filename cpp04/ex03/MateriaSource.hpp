@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 01:03:51 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 01:08:03 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 14:06:28 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
+# include "IMateriaSource.hpp"
 
-class   MateriaSource
+class   MateriaSource : public IMateriaSource
 {
     public:
         MateriaSource(void);

@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:28 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 01:03:06 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 14:52:07 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,23 @@ Cure  &Cure::operator=(Cure const &rhs)
     }
     return (*this);
 }
+
+/*
+void    AMateria::use(ICharacter &target)
+{
+    if (this->_type == "ice")
+    {
+        std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+        return ;
+    }
+    if (this->_type == "cure")
+    {
+        std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+        return ;
+    }
+    return ;
+}
+*/
 
 std::ostream    &operator<<(std::ostream &o, Cure const &cure)
 {

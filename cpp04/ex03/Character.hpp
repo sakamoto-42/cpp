@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 00:52:39 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 01:15:51 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 14:04:40 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
 
-class   Character
+class   Character : public ICharacter
 {
     public:
         Character(void);

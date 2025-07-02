@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:46:23 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 23:26:00 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 14:23:56 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class Dog : public AAnimal
     public:
         Dog(void);
         Dog(Dog const &src);
-        virtual ~Dog(void);
+        virtual                     ~Dog(void);
 
-        Dog             &operator=(Dog const &rhs);
+        Dog                         &operator=(Dog const &rhs);
 
         virtual void                makeSound(void) const;
         virtual void                learn(const std::string &idea);
