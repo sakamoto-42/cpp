@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:32 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 00:32:02 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 15:43:45 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 # define ICE_HPP
 
 # include <iostream>
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class   Ice
+class   Ice : public AMateria
 {
     public:
         Ice(void);
         Ice(Ice const &src);
-        virtual ~Ice(void);
+        virtual             ~Ice(void);
 
-        Ice     &operator=(Ice const &rhs);
+        Ice                 &operator=(Ice const &rhs);
+
+        virtual void        use(ICharacter &target);
+
+        virtual AMateria    *clone() const;
 };
 
 std::ostream    &operator<<(std::ostream &o, Ice const &ice);

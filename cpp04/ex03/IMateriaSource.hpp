@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:45 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 00:33:10 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 16:16:40 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class   IMateriaSource
     public:
         virtual             ~IMateriaSource() {}
         virtual void        learnMateria(AMateria *) = 0;
-        virtual AMateria    *createMateria(std::string const &type) = 0;
+        //virtual AMateria    *createMateria(std::string const &type) = 0;
 };
 
 #endif

@@ -6,10 +6,11 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:48 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 01:14:12 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 16:13:55 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
@@ -41,5 +42,10 @@ int main(void)
     delete(me);
     delete(src);
 
+    return (0);
+}
+*/
+int main(void)
+{
     return (0);
 }

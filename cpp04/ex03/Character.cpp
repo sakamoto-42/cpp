@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 00:55:18 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 01:15:59 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 16:18:05 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,25 @@ std::string const   &Character::getName() const
     return (this->_name);
 }
 
-void    Character::equip(AMateria *m)
+void                Character::equip(AMateria *m)
 {
+    (void)m;
     return ;
 }
 
-void    Character::unequip(int idx)
+void                Character::unequip(int idx)
 {
+    (void)idx;
     return ;
 }
-void    Character::use(int idx, ICharacter &target)
+void                Character::use(int idx, ICharacter &target)
 {
+    (void)idx;
+    (void)target;
     return ;
 }
 
-std::ostream    &operator<<(std::ostream &o, Character const &character)
+std::ostream        &operator<<(std::ostream &o, Character const &character)
 {
     (void)character;
     o << "Character" << std::endl;

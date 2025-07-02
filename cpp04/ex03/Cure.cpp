@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:28 by julien            #+#    #+#             */
-/*   Updated: 2025/07/02 14:52:07 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 15:42:07 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 #include <string>
 #include "Cure.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : AMateria("cure")
 {
     std::cout << "Cure default constructor called" << std::endl;
     return ;
 }
 
-Cure::Cure(Cure const &src)
+Cure::Cure(Cure const &src) : AMateria(src)
 {
     std::cout << "Cure copy constructor called" << std::endl;
-    *this = src;
     return ;
 }
 
@@ -33,36 +32,30 @@ Cure::~Cure(void)
     return ;
 }
 
-Cure  &Cure::operator=(Cure const &rhs)
+Cure            &Cure::operator=(Cure const &rhs)
 {
     std::cout << "Cure copy assignment operator called" << std::endl;
     if (this != &rhs)
     {
-        
+        AMateria::operator=(rhs);
     }
     return (*this);
 }
 
-/*
-void    AMateria::use(ICharacter &target)
+void            Cure::use(ICharacter &target)
 {
-    if (this->_type == "ice")
-    {
-        std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
-        return ;
-    }
-    if (this->_type == "cure")
-    {
-        std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
-        return ;
-    }
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
     return ;
 }
-*/
+
+AMateria        *Cure::clone(void) const
+{
+    return (new Cure(*this));
+}
 
 std::ostream    &operator<<(std::ostream &o, Cure const &cure)
 {
-    (void)cure;
-    o << "Cure" << std::endl;
+    o << "Cure :" << std::endl;
+    o << "Type : " << cure.getType() << std::endl;
     return (o);
 }

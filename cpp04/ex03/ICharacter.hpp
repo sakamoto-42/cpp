@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:40 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 00:31:55 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 16:08:26 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <iostream>
 # include <string>
-# include "AMateria.hpp"
-# include "ICharacter.hpp"
+
+class   AMateria;
 
 class   ICharacter
 {

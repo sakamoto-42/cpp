@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 01:03:51 by julien            #+#    #+#             */
-/*   Updated: 2025/07/02 14:06:28 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 16:16:47 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class   MateriaSource : public IMateriaSource
         MateriaSource       &operator=(MateriaSource const &rhs);
 
         virtual void        learnMateria(AMateria *);
-        virtual AMateria    *createMateria(std::string const &type);
+        //virtual AMateria    *createMateria(std::string const &type);
 };
 
 std::ostream    &operator<<(std::ostream &o, MateriaSource const &materia_source);

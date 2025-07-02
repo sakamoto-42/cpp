@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:35 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 01:03:28 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 15:53:50 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 #include <string>
 #include "Ice.hpp"
 
-Ice::Ice(void)
+Ice::Ice(void) : AMateria("ice")
 {
     std::cout << "Ice default constructor called" << std::endl;
     return ;
 }
 
-Ice::Ice(Ice const &src)
+Ice::Ice(Ice const &src) : AMateria(src)
 {
     std::cout << "Ice copy constructor called" << std::endl;
-    *this = src;
     return ;
 }
 
@@ -33,19 +32,30 @@ Ice::~Ice(void)
     return ;
 }
 
-Ice  &Ice::operator=(Ice const &rhs)
+Ice             &Ice::operator=(Ice const &rhs)
 {
     std::cout << "Ice copy assignment operator called" << std::endl;
     if (this != &rhs)
     {
-        
+        AMateria::operator=(rhs);
     }
     return (*this);
 }
 
+void            Ice::use(ICharacter &target)
+{
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    return ;
+}
+
+AMateria        *Ice::clone(void) const
+{
+    return (new Ice(*this));
+}
+
 std::ostream    &operator<<(std::ostream &o, Ice const &ice)
 {
-    (void)ice;
-    o << "Ice" << std::endl;
+    o << "Ice :" << std::endl;
+    o << "Type : " << ice.getType() << std::endl;
     return (o);
 }

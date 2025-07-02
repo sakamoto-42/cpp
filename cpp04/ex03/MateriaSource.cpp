@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 01:08:18 by julien            #+#    #+#             */
-/*   Updated: 2025/07/01 01:13:32 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 16:16:26 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,12 @@ void            MateriaSource::learnMateria(AMateria *)
     return ;
 }
 
+/*
 AMateria        *MateriaSource::createMateria(std::string const &type)
 {
-    return ;
-}
+    (void)type;
+    return ();
+}*/
 
 std::ostream    &operator<<(std::ostream &o, MateriaSource const &materia_source)
 {

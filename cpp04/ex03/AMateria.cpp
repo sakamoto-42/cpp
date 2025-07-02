@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:24 by julien            #+#    #+#             */
-/*   Updated: 2025/07/02 14:59:20 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 15:42:06 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ AMateria::~AMateria(void)
     return ;
 }
 
-AMateria  &AMateria::operator=(AMateria const &rhs)
+AMateria            &AMateria::operator=(AMateria const &rhs)
 {
     std::cout << "AMateria copy assignment operator called" << std::endl;
     if (this != &rhs)
     {
-        this->_type = rhs.getType();
+        
     }
     return (*this);
 }
 
-void    AMateria::use(ICharacter &target)
+void                AMateria::use(ICharacter &target)
 {
     std::cout << "* use an unknown materia on " << target.getName() << "*" << std::endl;
     return ;
