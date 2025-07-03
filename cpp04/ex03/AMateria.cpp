@@ -6,14 +6,14 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:24 by julien            #+#    #+#             */
-/*   Updated: 2025/07/02 15:42:06 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/02 17:37:02 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "AMateria.hpp"
 
-AMateria::AMateria(void) : _type("default")
+AMateria::AMateria(void) : _type("unknown materia")
 {
     std::cout << "AMateria default constructor called" << std::endl;
     return ;
