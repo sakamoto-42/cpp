@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:54:49 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 23:13:47 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/04 10:18:34 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ class   Brain
     public:
         Brain(void);
         Brain(Brain const &src);
-        virtual ~Brain(void);
+        virtual             ~Brain(void);
 
         Brain               &operator=(Brain const &rhs);
 
         void                addIdea(const std::string &idea);
 
         const std::string   getIdea(int idea_index) const;
-        int                 getIdeaCount() const;
+        int                 getIdeaCount(void) const;
 
     private:
         std::string _ideas[100];

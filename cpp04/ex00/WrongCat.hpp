@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:50:12 by julien            #+#    #+#             */
-/*   Updated: 2025/06/29 17:13:05 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/04 09:07:27 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class WrongCat : public WrongAnimal
     public:
         WrongCat(void);
         WrongCat(WrongCat const &src);
-        virtual ~WrongCat(void);
+        virtual     ~WrongCat(void);
 
-        WrongCat &operator=(WrongCat const &rhs);
+        WrongCat    &operator=(WrongCat const &rhs);
 
-        void    makeSound(void) const;
+        void        makeSound(void) const;
 };
 
 std::ostream    &operator<<(std::ostream &o, WrongCat const &wrong_cat);

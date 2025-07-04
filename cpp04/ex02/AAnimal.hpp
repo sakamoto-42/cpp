@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:33:23 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 23:46:12 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/04 10:28:59 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class   AAnimal
     public:
         AAnimal(void);
         AAnimal(AAnimal const &src);
-        virtual ~AAnimal(void);
+        virtual                     ~AAnimal(void);
 
         AAnimal                     &operator=(AAnimal const &rhs);
 

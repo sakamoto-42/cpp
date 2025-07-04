@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 09:50:44 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 20:49:11 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/04 09:43:51 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Cat::Cat(Cat const &src) : Animal(src), _brain(new Brain(*(src._brain)))
     this->type = "Cat";
     std::cout << "Cat copy constructor called with :" << std::endl;
     std::cout << "Type : " << this->getType() << std::endl;
-    *this = src;
     return ;
 }
 

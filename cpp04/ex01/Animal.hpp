@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:28:05 by julien            #+#    #+#             */
-/*   Updated: 2025/06/30 23:38:16 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/04 09:15:52 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class   Animal
     public:
         Animal(void);
         Animal(Animal const &src);
-        virtual ~Animal(void);
+        virtual                     ~Animal(void);
 
         Animal                      &operator=(Animal const &rhs);
 
