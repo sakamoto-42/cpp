@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 00:52:39 by julien            #+#    #+#             */
-/*   Updated: 2025/07/03 11:08:42 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/04 11:30:57 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class   Character : public ICharacter
 
         virtual std::string const   &getName() const;
         void                        printInventory(std::ostream &o) const;
-
 
     private:
         std::string _name;

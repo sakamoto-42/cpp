@@ -6,7 +6,7 @@
 /*   By: julien <julien@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 10:11:32 by julien            #+#    #+#             */
-/*   Updated: 2025/07/02 15:43:45 by julien           ###   ########.fr       */
+/*   Updated: 2025/07/04 11:28:24 by julien           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class   Ice : public AMateria
 
         virtual void        use(ICharacter &target);
 
-        virtual AMateria    *clone() const;
+        virtual AMateria    *clone(void) const;
 };
 
 std::ostream    &operator<<(std::ostream &o, Ice const &ice);
